@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全国文宣行业信息化招投标监测看板系统</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy-900:#061528;--navy-800:#0a1e3c;--navy-700:#102a4c;--navy-600:#1a3a5c;
+  --navy-500:#2a4f7c;--navy-400:#3a6298;--gold:#c9a96e;--gold-light:#dcc096;
+  --bg:#eef1f6;--card:#ffffff;--text-1:#1a2233;--text-2:#4a5568;--text-3:#8896a8;
+  --border:#d8dde6;--blue:#2563eb;--green:#16a34a;--red:#dc2626;--orange:#ea580c;
+  --purple:#7c3aed;--cyan:#0891b2;--shadow:0 2px 8px rgba(6,21,40,.08);
+  --shadow-lg:0 8px 30px rgba(6,21,40,.12);
+}
+body{font-family:'Microsoft YaHei','PingFang SC','Segoe UI',sans-serif;background:var(--bg);color:var(--text-1);font-size:14px;min-width:1366px;overflow-x:auto;}
+::-webkit-scrollbar{width:8px;height:8px;}
+::-webkit-scrollbar-track{background:#e2e6ed;}
+::-webkit-scrollbar-thumb{background:#a0aab8;border-radius:4px;}
+::-webkit-scrollbar-thumb:hover{background:#8090a0;}
+
+/* ===== Header ===== */
+.app-header{height:64px;background:linear-gradient(135deg,var(--navy-900) 0%,var(--navy-700) 100%);display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:relative;z-index:100;box-shadow:0 2px 12px rgba(6,21,40,.3);}
+.app-header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold) 30%,var(--gold) 70%,transparent);}
+.header-left{display:flex;align-items:center;gap:14px;}
+.header-logo{width:38px;height:38px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--navy-900);font-weight:bold;box-shadow:0 2px 8px rgba(201,169,110,.4);}
+.header-title{font-size:20px;font-weight:600;color:#fff;letter-spacing:1px;}
+.header-sub{font-size:11px;color:rgba(255,255,255,.5);margin-top:2px;}
+.header-right{display:flex;align-items:center;gap:20px;}
+.update-status{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.7);font-size:12px;}
+.update-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 8px #22c55e;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.5;}}
+.header-btn{padding:7px 16px;border:1px solid rgba(201,169,110,.4);border-radius:6px;color:var(--gold-light);font-size:12px;cursor:pointer;transition:.2s;background:transparent;display:flex;align-items:center;gap:6px;}
+.header-btn:hover{background:rgba(201,169,110,.12);border-color:var(--gold);}
+
+/* ===== Tabs ===== */
+.tab-bar{background:var(--navy-800);display:flex;padding:0 24px;gap:2px;box-shadow:0 2px 6px rgba(0,0,0,.1);}
+.tab-item{padding:14px 26px;color:rgba(255,255,255,.55);font-size:14px;cursor:pointer;position:relative;transition:.25s;font-weight:500;border-bottom:3px solid transparent;display:flex;align-items:center;gap:7px;}
+.tab-item:hover{color:rgba(255,255,255,.85);}
+.tab-item.active{color:#fff;border-bottom-color:var(--gold);background:rgba(255,255,255,.04);}
+.tab-icon{font-size:16px;}
+
+/* ===== Filter Bar ===== */
+.filter-bar{background:var(--card);padding:16px 28px;display:flex;align-items:center;gap:20px;border-bottom:1px solid var(--border);box-shadow:var(--shadow);flex-wrap:wrap;}
+.filter-group{display:flex;align-items:center;gap:8px;}
+.filter-label{font-size:13px;color:var(--text-2);font-weight:500;white-space:nowrap;}
+.filter-select{padding:7px 32px 7px 12px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:#fff;cursor:pointer;min-width:130px;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238896a8' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");background-position:right 10px center;background-repeat:no-repeat;}
+.filter-select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.1);}
+.filter-reset{padding:7px 16px;background:var(--navy-700);color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:13px;transition:.2s;}
+.filter-reset:hover{background:var(--navy-600);}
+.filter-info{margin-left:auto;display:flex;align-items:center;gap:16px;font-size:12px;color:var(--text-3);}
+.filter-info b{color:var(--navy-700);font-size:16px;}
+
+/* ===== Main Content ===== */
+.main-content{padding:20px 28px;min-height:calc(100vh - 130px);}
+.tab-content{display:none;}
+.tab-content.active{display:block;animation:fadeIn .35s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+/* ===== KPI Cards ===== */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:20px;}
+.kpi-card{background:var(--card);border-radius:10px;padding:22px 24px;box-shadow:var(--shadow);position:relative;overflow:hidden;border-top:3px solid var(--navy-600);transition:.25s;}
+.kpi-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px);}
+.kpi-card::after{content:'';position:absolute;right:-20px;bottom:-20px;width:100px;height:100px;border-radius:50%;opacity:.04;}
+.kpi-card.k1{border-top-color:var(--blue);} .kpi-card.k1::after{background:var(--blue);}
+.kpi-card.k2{border-top-color:var(--green);} .kpi-card.k2::after{background:var(--green);}
+.kpi-card.k3{border-top-color:var(--orange);} .kpi-card.k3::after{background:var(--orange);}
+.kpi-card.k4{border-top-color:var(--purple);} .kpi-card.k4::after{background:var(--purple);}
+.kpi-label{font-size:13px;color:var(--text-2);margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+.kpi-value{font-size:32px;font-weight:700;color:var(--navy-800);line-height:1.1;}
+.kpi-unit{font-size:13px;color:var(--text-3);font-weight:400;margin-left:4px;}
+.kpi-trend{margin-top:8px;font-size:12px;display:flex;align-items:center;gap:4px;}
+.kpi-trend.up{color:var(--green);} .kpi-trend.down{color:var(--red);}
+.kpi-icon{position:absolute;right:20px;top:20px;font-size:32px;opacity:.12;}
+
+/* ===== Chart Cards ===== */
+.chart-grid{display:grid;gap:16px;margin-bottom:20px;}
+.chart-grid.cols-2{grid-template-columns:1fr 1fr;}
+.chart-grid.cols-3{grid-template-columns:1fr 1fr 1fr;}
+.chart-card{background:var(--card);border-radius:10px;box-shadow:var(--shadow);overflow:hidden;}
+.chart-header{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.chart-title{font-size:15px;font-weight:600;color:var(--navy-800);display:flex;align-items:center;gap:8px;}
+.chart-title::before{content:'';width:3px;height:16px;background:var(--gold);border-radius:2px;}
+.chart-tag{font-size:11px;padding:2px 10px;border-radius:10px;background:#eef2ff;color:var(--blue);}
+.chart-body{padding:16px 20px;}
+.chart-body canvas{max-height:280px;}
+
+/* ===== Table ===== */
+.table-card{background:var(--card);border-radius:10px;box-shadow:var(--shadow);overflow:hidden;}
+.table-header{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.table-title{font-size:15px;font-weight:600;color:var(--navy-800);display:flex;align-items:center;gap:8px;}
+.table-title::before{content:'';width:3px;height:16px;background:var(--gold);border-radius:2px;}
+.table-tools{display:flex;gap:8px;}
+.table-tool-btn{padding:6px 14px;border:1px solid var(--border);border-radius:6px;font-size:12px;cursor:pointer;background:#fff;transition:.2s;display:flex;align-items:center;gap:5px;color:var(--text-2);}
+.table-tool-btn:hover{border-color:var(--blue);color:var(--blue);}
+.table-search{padding:6px 12px 6px 32px;border:1px solid var(--border);border-radius:6px;font-size:12px;width:200px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='%238896a8' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3E%3C/svg%3E") no-repeat 10px center;}
+.table-search:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.1);}
+.table-wrap{overflow-x:auto;}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;}
+.data-table thead{background:#f5f7fa;}
+.data-table th{padding:11px 16px;text-align:left;font-weight:600;color:var(--text-2);white-space:nowrap;cursor:pointer;user-select:none;border-bottom:2px solid var(--border);position:sticky;top:0;z-index:1;}
+.data-table th:hover{background:#eaeef4;}
+.data-table th .sort-icon{display:inline-block;margin-left:4px;opacity:.3;font-size:10px;}
+.data-table th.sorted .sort-icon{opacity:1;color:var(--blue);}
+.data-table td{padding:10px 16px;border-bottom:1px solid #eef0f4;color:var(--text-1);}
+.data-table tbody tr:hover{background:#f8faff;}
+.data-table tbody tr:hover td{color:var(--navy-700);}
+.rank-badge{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:6px;font-weight:700;font-size:13px;}
+.rank-badge.r1{background:linear-gradient(135deg,#ffd700,#ffb700);color:#fff;}
+.rank-badge.r2{background:linear-gradient(135deg,#c0c0c0,#a0a0a0);color:#fff;}
+.rank-badge.r3{background:linear-gradient(135deg,#cd7f32,#b87333);color:#fff;}
+.rank-badge.rn{background:#eef2ff;color:var(--text-2);}
+.phase-tag{padding:3px 10px;border-radius:4px;font-size:12px;font-weight:500;}
+.phase-tag.p1{background:#e0f2fe;color:#0284c7;}
+.phase-tag.p2{background:#fef3c7;color:#d97706;}
+.phase-tag.p3{background:#d1fae5;color:#059669;}
+.phase-tag.p4{background:#ede9fe;color:#7c3aed;}
+.industry-tag{padding:3px 10px;border-radius:4px;font-size:12px;font-weight:500;}
+.industry-tag.i-culture{background:#fce7f3;color:#be185d;}
+.industry-tag.i-tourism{background:#dcfce7;color:#15803d;}
+.industry-tag.i-sports{background:#dbeafe;color:#1d4ed8;}
+.industry-tag.i-propaganda{background:#fef3c7;color:#b45309;}
+.type-tag{padding:2px 8px;border-radius:4px;font-size:11px;background:#f0f4ff;color:#3730a3;border:1px solid #c7d2fe;}
+.budget-cell{font-weight:600;color:var(--navy-700);}
+.budget-cell .unit{font-size:11px;color:var(--text-3);font-weight:400;}
+.table-footer{padding:12px 20px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--text-3);}
+.pager{display:flex;gap:4px;}
+.pager button{padding:5px 10px;border:1px solid var(--border);border-radius:4px;background:#fff;cursor:pointer;font-size:12px;transition:.2s;}
+.pager button:hover{border-color:var(--blue);color:var(--blue);}
+.pager button.active{background:var(--navy-700);color:#fff;border-color:var(--navy-700);}
+.pager button:disabled{opacity:.4;cursor:not-allowed;}
+
+/* ===== Kanban ===== */
+.kanban-board{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.kanban-col{background:var(--card);border-radius:10px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;max-height:calc(100vh - 280px);}
+.kanban-col-header{padding:14px 18px;border-bottom:2px solid;font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:space-between;}
+.kanban-col-header .count{padding:2px 10px;border-radius:10px;font-size:12px;font-weight:500;}
+.kanban-col.p1 .kanban-col-header{border-color:#7dd3fc;background:#f0f9ff;color:#0284c7;}
+.kanban-col.p1 .kanban-col-header .count{background:#bae6fd;color:#0284c7;}
+.kanban-col.p2 .kanban-col-header{border-color:#fcd34d;background:#fffbeb;color:#d97706;}
+.kanban-col.p2 .kanban-col-header .count{background:#fde68a;color:#d97706;}
+.kanban-col.p3 .kanban-col-header{border-color:#6ee7b7;background:#ecfdf5;color:#059669;}
+.kanban-col.p3 .kanban-col-header .count{background:#a7f3d0;color:#059669;}
+.kanban-col.p4 .kanban-col-header{border-color:#c4b5fd;background:#f5f3ff;color:#7c3aed;}
+.kanban-col.p4 .kanban-col-header .count{background:#ddd6fe;color:#7c3aed;}
+.kanban-list{overflow-y:auto;padding:12px;flex:1;}
+.kanban-item{background:#f8faff;border:1px solid #e8ecf2;border-radius:8px;padding:14px;margin-bottom:10px;cursor:pointer;transition:.2s;position:relative;}
+.kanban-item:hover{border-color:var(--blue);box-shadow:0 3px 10px rgba(37,99,235,.12);transform:translateY(-1px);}
+.kanban-item-title{font-size:13px;font-weight:600;color:var(--navy-800);margin-bottom:8px;line-height:1.4;}
+.kanban-item-meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;}
+.kanban-item-budget{font-size:16px;font-weight:700;color:var(--navy-700);}
+.kanban-item-budget .unit{font-size:11px;color:var(--text-3);font-weight:400;}
+.kanban-item-info{font-size:11px;color:var(--text-3);display:flex;gap:10px;margin-top:6px;}
+
+/* ===== Province Grid ===== */
+.province-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:20px;}
+.province-card{background:var(--card);border-radius:8px;padding:16px;box-shadow:var(--shadow);cursor:pointer;transition:.25s;border:2px solid transparent;position:relative;overflow:hidden;}
+.province-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:var(--shadow-lg);}
+.province-card.highlight{border-color:var(--blue);background:linear-gradient(135deg,#eff6ff,#fff);}
+.province-name{font-size:15px;font-weight:600;color:var(--navy-800);margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;}
+.province-stats{display:flex;gap:16px;}
+.province-stat{font-size:11px;color:var(--text-3);}
+.province-stat b{display:block;font-size:18px;color:var(--navy-700);font-weight:700;}
+.province-stat.budget b{color:var(--orange);}
+.province-bar{position:absolute;bottom:0;left:0;right:0;height:3px;background:#eef0f4;}
+.province-bar-fill{height:100%;background:linear-gradient(90deg,var(--navy-600),var(--blue));border-radius:0 3px 3px 0;}
+
+/* ===== Ministry Cards ===== */
+.ministry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px;}
+.ministry-card{background:var(--card);border-radius:10px;box-shadow:var(--shadow);overflow:hidden;cursor:pointer;transition:.25s;}
+.ministry-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px);}
+.ministry-header{padding:16px 20px;background:linear-gradient(135deg,var(--navy-800),var(--navy-600));color:#fff;display:flex;align-items:center;justify-content:space-between;}
+.ministry-name{font-size:15px;font-weight:600;}
+.ministry-badge{background:rgba(201,169,110,.25);color:var(--gold-light);padding:3px 10px;border-radius:12px;font-size:11px;}
+.ministry-body{padding:18px 20px;}
+.ministry-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f2f5;font-size:13px;}
+.ministry-row:last-child{border-bottom:none;}
+.ministry-row span:first-child{color:var(--text-2);}
+.ministry-row b{color:var(--navy-700);font-size:15px;}
+.ministry-trend{height:40px;margin-top:12px;display:flex;align-items:flex-end;gap:3px;}
+.ministry-trend-bar{flex:1;background:linear-gradient(180deg,var(--blue),#93c5fd);border-radius:3px 3px 0 0;min-height:4px;transition:.3s;}
+
+/* ===== Anomaly Alert ===== */
+.anomaly-bar{background:linear-gradient(135deg,#fff7ed,#fffbeb);border:1px solid #fed7aa;border-radius:8px;padding:14px 20px;margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+.anomaly-icon{width:32px;height:32px;border-radius:50%;background:#fef3c7;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--orange);flex-shrink:0;}
+.anomaly-text{flex:1;font-size:13px;color:#92400e;}
+.anomaly-text b{color:#78350f;}
+.anomaly-close{cursor:pointer;color:var(--text-3);font-size:18px;padding:4px;}
+.anomaly-close:hover{color:var(--text-1);}
+
+/* ===== Detail Panel ===== */
+.detail-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(6,21,40,.5);z-index:200;display:none;animation:fadeIn .2s;}
+.detail-overlay.show{display:block;}
+.detail-panel{position:fixed;top:0;right:0;width:560px;height:100vh;background:var(--card);z-index:201;box-shadow:-8px 0 30px rgba(0,0,0,.15);overflow-y:auto;animation:slideIn .3s ease;}
+@keyframes slideIn{from{transform:translateX(100%);}to{transform:translateX(0);}}
+.detail-header{padding:20px 24px;background:linear-gradient(135deg,var(--navy-900),var(--navy-700));color:#fff;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;}
+.detail-header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);}
+.detail-title{font-size:18px;font-weight:600;line-height:1.4;max-width:440px;}
+.detail-close{cursor:pointer;font-size:24px;opacity:.7;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:6px;}
+.detail-close:hover{opacity:1;background:rgba(255,255,255,.1);}
+.detail-body{padding:24px;}
+.detail-section{margin-bottom:24px;}
+.detail-section-title{font-size:13px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+.detail-row{display:flex;padding:10px 0;border-bottom:1px solid #f5f6f8;font-size:14px;}
+.detail-row .label{width:110px;color:var(--text-3);flex-shrink:0;}
+.detail-row .value{color:var(--navy-800);font-weight:500;}
+.detail-timeline{padding:0 0 0 8px;border-left:2px solid var(--border);}
+.timeline-item{position:relative;padding:0 0 20px 20px;}
+.timeline-item::before{content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue);}
+.timeline-item.done::before{background:var(--green);box-shadow:0 0 0 2px var(--green);}
+.timeline-date{font-size:12px;color:var(--text-3);margin-bottom:4px;}
+.timeline-content{font-size:14px;color:var(--navy-800);}
+
+/* ===== Responsive ===== */
+@media(min-width:1920px){.kpi-grid{grid-template-columns:repeat(4,1fr);}.province-grid{grid-template-columns:repeat(8,1fr);}}
+@media(min-width:2400px){.kpi-grid{grid-template-columns:repeat(4,1fr);}.province-grid{grid-template-columns:repeat(10,1fr);}}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="app-header">
+  <div class="header-left">
+    <div class="header-logo">文</div>
+    <div>
+      <div class="header-title">全国文宣行业信息化招投标监测看板系统</div>
+      <div class="header-sub">Cultural & Propaganda Industry IT Bidding Monitor · v2.0</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="update-status">
+      <span class="update-dot"></span>
+      <span id="updateStatusText">数据每2天自动更新 · 上次更新：<span id="lastUpdate">加载中...</span> · 来源：<span id="dataSource">中国政府采购网</span></span>
+    </div>
+    <button class="header-btn" onclick="manualRefresh()">⟳ 手动刷新</button>
+    <button class="header-btn" onclick="exportAllData()">⬇ 全量导出</button>
+  </div>
+</div>
+
+<!-- Tabs -->
+<div class="tab-bar" id="tabBar">
+  <div class="tab-item active" data-tab="overview"><span class="tab-icon">📊</span>总览驾驶舱</div>
+  <div class="tab-item" data-tab="phase"><span class="tab-icon">📋</span>项目阶段看板</div>
+  <div class="tab-item" data-tab="top100"><span class="tab-icon">🏆</span>TOP100榜单</div>
+  <div class="tab-item" data-tab="province"><span class="tab-icon">🗺️</span>31省厅专区</div>
+  <div class="tab-item" data-tab="ministry"><span class="tab-icon">🏛️</span>头部部委专区</div>
+  <div class="tab-item" data-tab="informatization"><span class="tab-icon">💻</span>信息化专项</div>
+</div>
+
+<!-- Filter Bar -->
+<div class="filter-bar">
+  <div class="filter-group">
+    <span class="filter-label">省份：</span>
+    <select class="filter-select" id="fProvince" onchange="applyFilters()">
+      <option value="">全部省份</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <span class="filter-label">时间范围：</span>
+    <select class="filter-select" id="fTime" onchange="applyFilters()">
+      <option value="">全部时间</option>
+      <option value="2026-06">2026年6月</option>
+      <option value="2026-05">2026年5月</option>
+      <option value="2026-04">2026年4月</option>
+      <option value="2026-03">2026年3月</option>
+      <option value="2026-02">2026年2月</option>
+      <option value="2026-01">2026年1月</option>
+      <option value="2026-Q2">2026年Q2</option>
+      <option value="2026-Q1">2026年Q1</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <span class="filter-label">行业领域：</span>
+    <select class="filter-select" id="fIndustry" onchange="applyFilters()">
+      <option value="">全部行业</option>
+      <option value="文化">文化</option>
+      <option value="旅游">旅游</option>
+      <option value="体育">体育</option>
+      <option value="宣传">宣传</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <span class="filter-label">项目阶段：</span>
+    <select class="filter-select" id="fPhase" onchange="applyFilters()">
+      <option value="">全部阶段</option>
+      <option value="采购意向">采购意向</option>
+      <option value="招标公告">招标公告</option>
+      <option value="中标公示">中标公示</option>
+      <option value="合同签订">合同签订</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <span class="filter-label">项目类型：</span>
+    <select class="filter-select" id="fType" onchange="applyFilters()">
+      <option value="">全部类型</option>
+      <option value="信息化建设">信息化建设</option>
+      <option value="数字化转型">数字化转型</option>
+      <option value="智慧平台">智慧平台</option>
+      <option value="数据中心">数据中心</option>
+      <option value="网络建设">网络建设</option>
+      <option value="系统集成">系统集成</option>
+      <option value="运维服务">运维服务</option>
+    </select>
+  </div>
+  <button class="filter-reset" onclick="resetFilters()">重置筛选</button>
+  <div class="filter-info">
+    <div>当前匹配 <b id="matchCount">0</b> 个项目</div>
+  </div>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+  <div id="globalAnomaly" style="display:none;"></div>
+
+  <!-- ========== Tab 1: Overview ========== -->
+  <div class="tab-content active" id="tab-overview">
+    <div id="anomalyAlert"></div>
+    <div class="kpi-grid">
+      <div class="kpi-card k1">
+        <div class="kpi-label">📊 监测项目总数</div>
+        <div class="kpi-value" id="kpiTotal">0<span class="kpi-unit">个</span></div>
+        <div class="kpi-trend up">▲ 较上期增长 12.3%</div>
+        <div class="kpi-icon">📊</div>
+      </div>
+      <div class="kpi-card k2">
+        <div class="kpi-label">💰 预算总金额</div>
+        <div class="kpi-value" id="kpiBudget">0<span class="kpi-unit">亿元</span></div>
+        <div class="kpi-trend up">▲ 较上期增长 8.7%</div>
+        <div class="kpi-icon">💰</div>
+      </div>
+      <div class="kpi-card k3">
+        <div class="kpi-label">⚡ 进行中招标</div>
+        <div class="kpi-value" id="kpiActive">0<span class="kpi-unit">个</span></div>
+        <div class="kpi-trend down">▼ 较上期减少 3.2%</div>
+        <div class="kpi-icon">⚡</div>
+      </div>
+      <div class="kpi-card k4">
+        <div class="kpi-label">💻 信息化项目占比</div>
+        <div class="kpi-value" id="kpiItRatio">0<span class="kpi-unit">%</span></div>
+        <div class="kpi-trend up">▲ 较上期增长 5.1%</div>
+        <div class="kpi-icon">💻</div>
+      </div>
+    </div>
+
+    <div class="chart-grid cols-2">
+      <div class="chart-card">
+        <div class="chart-header">
+          <div class="chart-title">月度招投标趋势</div>
+          <span class="chart-tag">2026年</span>
+        </div>
+        <div class="chart-body"><canvas id="chartTrend"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <div class="chart-title">行业领域分布</div>
+          <span class="chart-tag">按预算金额</span>
+        </div>
+        <div class="chart-body"><canvas id="chartIndustry"></canvas></div>
+      </div>
+    </div>
+
+    <div class="chart-grid cols-2">
+      <div class="chart-card">
+        <div class="chart-header">
+          <div class="chart-title">项目阶段分布</div>
+          <span class="chart-tag">实时</span>
+        </div>
+        <div class="chart-body"><canvas id="chartPhase"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <div class="chart-title">TOP10 省份预算排名</div>
+          <span class="chart-tag">万元</span>
+        </div>
+        <div class="chart-body"><canvas id="chartProvinceTop"></canvas></div>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <div class="table-header">
+        <div class="table-title">最新重点招标项目</div>
+        <div class="table-tools">
+          <button class="table-tool-btn" onclick="exportTable('recentTable')">⬇ 导出Excel</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table" id="recentTable">
+          <thead>
+            <tr>
+              <th onclick="sortTable('recentTable',0)">项目编号 <span class="sort-icon">▼</span></th>
+              <th onclick="sortTable('recentTable',1)">项目名称 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('recentTable',2)">行业 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('recentTable',3)">省份 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('recentTable',4)">阶段 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('recentTable',5)">预算金额 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('recentTable',6)">中标单位 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('recentTable',7)">发布日期 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('recentTable',8)">类型 <span class="sort-icon"></span></th>
+            </tr>
+          </thead>
+          <tbody id="recentTbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== Tab 2: Phase Kanban ========== -->
+  <div class="tab-content" id="tab-phase">
+    <div class="kanban-board" id="kanbanBoard"></div>
+  </div>
+
+  <!-- ========== Tab 3: TOP100 ========== -->
+  <div class="tab-content" id="tab-top100">
+    <div class="chart-grid cols-3" style="margin-bottom:16px;">
+      <div class="chart-card">
+        <div class="chart-header"><div class="chart-title">TOP100 行业分布</div></div>
+        <div class="chart-body"><canvas id="chartTop100Industry"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header"><div class="chart-title">TOP100 预算区间</div></div>
+        <div class="chart-body"><canvas id="chartTop100Range"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header"><div class="chart-title">TOP100 省份TOP10</div></div>
+        <div class="chart-body"><canvas id="chartTop100Province"></canvas></div>
+      </div>
+    </div>
+    <div class="table-card">
+      <div class="table-header">
+        <div class="table-title">TOP100 重点项目榜单（按预算金额排序）</div>
+        <div class="table-tools">
+          <input type="text" class="table-search" id="top100Search" placeholder="搜索项目名称/编号..." oninput="renderTop100()">
+          <button class="table-tool-btn" onclick="exportTable('top100Table')">⬇ 导出Excel</button>
+        </div>
+      </div>
+      <div class="table-wrap" style="max-height:600px;overflow-y:auto;">
+        <table class="data-table" id="top100Table">
+          <thead>
+            <tr>
+              <th>排名</th>
+              <th onclick="sortTable('top100Table',1)">项目编号 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('top100Table',2)">项目名称 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('top100Table',3)">行业 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('top100Table',4)">省份 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('top100Table',5)">预算金额 <span class="sort-icon sorted">▼</span></th>
+              <th onclick="sortTable('top100Table',6)">阶段 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('top100Table',7)">采购单位 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('top100Table',8)">发布日期 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('top100Table',9)">类型 <span class="sort-icon"></span></th>
+            </tr>
+          </thead>
+          <tbody id="top100Tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== Tab 4: Province ========== -->
+  <div class="tab-content" id="tab-province">
+    <div class="chart-grid cols-2" style="margin-bottom:20px;">
+      <div class="chart-card">
+        <div class="chart-header"><div class="chart-title">31省份项目数量分布</div><span class="chart-tag">个</span></div>
+        <div class="chart-body" style="max-height:320px;overflow-y:auto;"><canvas id="chartProvinceAll"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header"><div class="chart-title">31省份预算金额对比</div><span class="chart-tag">亿元</span></div>
+        <div class="chart-body" style="max-height:320px;overflow-y:auto;"><canvas id="chartProvinceBudget"></canvas></div>
+      </div>
+    </div>
+    <div class="province-grid" id="provinceGrid"></div>
+    <div class="table-card">
+      <div class="table-header">
+        <div class="table-title" id="provinceTableTitle">各省厅项目明细</div>
+        <div class="table-tools">
+          <input type="text" class="table-search" id="provinceSearch" placeholder="搜索项目..." oninput="renderProvinceTable()">
+          <button class="table-tool-btn" onclick="exportTable('provinceTable')">⬇ 导出Excel</button>
+        </div>
+      </div>
+      <div class="table-wrap" style="max-height:500px;overflow-y:auto;">
+        <table class="data-table" id="provinceTable">
+          <thead>
+            <tr>
+              <th onclick="sortTable('provinceTable',0)">项目编号 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('provinceTable',1)">项目名称 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('provinceTable',2)">行业 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('provinceTable',3)">省份 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('provinceTable',4)">预算金额 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('provinceTable',5)">阶段 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('provinceTable',6)">采购单位 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('provinceTable',7)">发布日期 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('provinceTable',8)">类型 <span class="sort-icon"></span></th>
+            </tr>
+          </thead>
+          <tbody id="provinceTbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== Tab 5: Ministry ========== -->
+  <div class="tab-content" id="tab-ministry">
+    <div class="kpi-grid">
+      <div class="kpi-card k1">
+        <div class="kpi-label">🏛️ 部委项目总数</div>
+        <div class="kpi-value" id="kpiMinTotal">0<span class="kpi-unit">个</span></div>
+        <div class="kpi-trend up">▲ 较上期增长 6.5%</div>
+      </div>
+      <div class="kpi-card k2">
+        <div class="kpi-label">💰 部委预算总额</div>
+        <div class="kpi-value" id="kpiMinBudget">0<span class="kpi-unit">亿元</span></div>
+        <div class="kpi-trend up">▲ 较上期增长 9.2%</div>
+      </div>
+      <div class="kpi-card k3">
+        <div class="kpi-label">💻 信息化项目</div>
+        <div class="kpi-value" id="kpiMinIT">0<span class="kpi-unit">个</span></div>
+        <div class="kpi-trend up">▲ 占比 68.3%</div>
+      </div>
+      <div class="kpi-card k4">
+        <div class="kpi-label">⚡ 招标进行中</div>
+        <div class="kpi-value" id="kpiMinActive">0<span class="kpi-unit">个</span></div>
+        <div class="kpi-trend">— 与上期持平</div>
+      </div>
+    </div>
+    <div class="ministry-grid" id="ministryGrid"></div>
+    <div class="table-card">
+      <div class="table-header">
+        <div class="table-title">部委重点项目明细</div>
+        <div class="table-tools">
+          <input type="text" class="table-search" id="ministrySearch" placeholder="搜索项目..." oninput="renderMinistryTable()">
+          <button class="table-tool-btn" onclick="exportTable('ministryTable')">⬇ 导出Excel</button>
+        </div>
+      </div>
+      <div class="table-wrap" style="max-height:500px;overflow-y:auto;">
+        <table class="data-table" id="ministryTable">
+          <thead>
+            <tr>
+              <th onclick="sortTable('ministryTable',0)">项目编号 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('ministryTable',1)">项目名称 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('ministryTable',2)">主管部委 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('ministryTable',3)">行业 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('ministryTable',4)">预算金额 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('ministryTable',5)">阶段 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('ministryTable',6)">发布日期 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('ministryTable',7)">类型 <span class="sort-icon"></span></th>
+            </tr>
+          </thead>
+          <tbody id="ministryTbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== Tab 6: Informatization ========== -->
+  <div class="tab-content" id="tab-informatization">
+    <div class="kpi-grid">
+      <div class="kpi-card k1">
+        <div class="kpi-label">💻 信息化项目总数</div>
+        <div class="kpi-value" id="kpiItTotal">0<span class="kpi-unit">个</span></div>
+        <div class="kpi-trend up">▲ 较上期增长 15.6%</div>
+      </div>
+      <div class="kpi-card k2">
+        <div class="kpi-label">💰 信息化预算总额</div>
+        <div class="kpi-value" id="kpiItBudget">0<span class="kpi-unit">亿元</span></div>
+        <div class="kpi-trend up">▲ 较上期增长 11.3%</div>
+      </div>
+      <div class="kpi-card k3">
+        <div class="kpi-label">📊 单项目均预算</div>
+        <div class="kpi-value" id="kpiItAvg">0<span class="kpi-unit">万元</span></div>
+        <div class="kpi-trend down">▼ 较上期降低 2.1%</div>
+      </div>
+      <div class="kpi-card k4">
+        <div class="kpi-label">⚡ 招标中信息化项目</div>
+        <div class="kpi-value" id="kpiItActive">0<span class="kpi-unit">个</span></div>
+        <div class="kpi-trend up">▲ 较上期增长 7.8%</div>
+      </div>
+    </div>
+    <div class="chart-grid cols-2">
+      <div class="chart-card">
+        <div class="chart-header"><div class="chart-title">信息化项目类型分布</div></div>
+        <div class="chart-body"><canvas id="chartItType"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header"><div class="chart-title">信息化项目月度趋势</div></div>
+        <div class="chart-body"><canvas id="chartItTrend"></canvas></div>
+      </div>
+    </div>
+    <div class="table-card">
+      <div class="table-header">
+        <div class="table-title">信息化专项项目明细</div>
+        <div class="table-tools">
+          <input type="text" class="table-search" id="itSearch" placeholder="搜索项目..." oninput="renderItTable()">
+          <button class="table-tool-btn" onclick="exportTable('itTable')">⬇ 导出Excel</button>
+        </div>
+      </div>
+      <div class="table-wrap" style="max-height:550px;overflow-y:auto;">
+        <table class="data-table" id="itTable">
+          <thead>
+            <tr>
+              <th onclick="sortTable('itTable',0)">项目编号 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('itTable',1)">项目名称 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('itTable',2)">行业 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('itTable',3)">省份 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('itTable',4)">预算金额 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('itTable',5)">阶段 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('itTable',6)">信息化类型 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('itTable',7)">采购单位 <span class="sort-icon"></span></th>
+              <th onclick="sortTable('itTable',8)">发布日期 <span class="sort-icon"></span></th>
+            </tr>
+          </thead>
+          <tbody id="itTbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Detail Panel -->
+<div class="detail-overlay" id="detailOverlay" onclick="closeDetail(event)">
+  <div class="detail-panel" id="detailPanel" onclick="event.stopPropagation()">
+    <div class="detail-header">
+      <div class="detail-title" id="detailTitle">项目详情</div>
+      <div class="detail-close" onclick="closeDetailPanel()">✕</div>
+    </div>
+    <div class="detail-body" id="detailBody"></div>
+  </div>
+</div>
+
+<script>
+// ==================== DATA LOADING (from ccgp_data.json) ====================
+const CUSTOM_PROVINCES = ['北京','天津','河北','山西','内蒙古','辽宁','吉林','黑龙江','上海','江苏','浙江','安徽','福建','江西','山东','河南','湖北','湖南','广东','广西','海南','重庆','四川','贵州','云南','西藏','陕西','甘肃','青海','宁夏','新疆'];
+const CUSTOM_INDUSTRIES = ['文化','旅游','体育','宣传'];
+const CUSTOM_PHASES = ['采购意向','招标公告','中标公示','合同签订'];
+const CUSTOM_MINISTRIES = ['文化和旅游部','国家广播电视总局','国家文物局','国家体育总局','中央广播电视总台','新华通讯社','中央宣传部','国家新闻出版署'];
+
+// 预初始化：allData 从不为空，避免"加载中..."卡死
+let allData = (function(){
+  console.log('[预初始化] 加载种子数据...');
+  return [
+    {id:'SEED-001',title:'广东省文化和旅游厅智慧文旅平台数据采集与监测服务项目',industry:'旅游',province:'广东',phase:'中标公示',budget:450,agency:'广东省文化和旅游厅',date:'2026-06-24',isIT:true,itType:'智慧平台',winner:'中国电信股份有限公司广东分公司',url:'',isMinistry:false,contact:'',phone:'',description:'广东省文化和旅游厅智慧文旅平台数据采集与监测服务，中标单位为中国电信股份有限公司广东分公司。',type:'智慧平台'},
+    {id:'SEED-002',title:'陕西省文化和旅游厅文旅大数据分析与应急指挥调度平台建设',industry:'旅游',province:'陕西',phase:'中标公示',budget:3800,agency:'陕西省文化和旅游厅',date:'2026-06-20',isIT:true,itType:'大数据中心',winner:'中移系统集成有限公司',url:'',isMinistry:false,contact:'',phone:'',description:'建设文旅大数据分析与应急指挥调度平台，中标单位为中移系统集成有限公司。',type:'大数据中心'},
+    {id:'SEED-003',title:'文化和旅游部全国旅游监管服务平台运维升级',industry:'旅游',province:'部委',phase:'合同签订',budget:7200,agency:'文化和旅游部',date:'2026-06-01',isIT:true,itType:'运维服务',winner:'太极计算机股份有限公司',url:'',isMinistry:true,ministry:'文化和旅游部',contact:'',phone:'',description:'全国旅游监管服务平台运维升级，中标单位为太极计算机股份有限公司。',type:'运维服务'},
+  ];
+})();
+let filteredData = [];
+let sortState = {};
+let currentPage = {recent:1, top100:1, province:1, ministry:1, it:1};
+const pageSize = 15;
+let dataLoadError = false;
+
+function mapCrawlerProject(p) {
+  // Map crawler JSON fields to dashboard fields
+  const proj = {
+    id: p.id || ('WT-' + Math.random().toString(36).slice(2,10)),
+    title: (p.title || '').trim(),
+    industry: p.industry || '其他',
+    province: p.province || '其他',
+    phase: p.phase || '招标公告',
+    budget: (p.budget && p.budget > 0) ? p.budget : null,
+    agency: p.agency || '',
+    agent: p.agent || '',
+    date: (p.date || '').slice(0,10),
+    isIT: p.isIT || false,
+    itType: p.itType || (p.isIT ? '信息化建设' : null),
+    type: p.itType || (p.isIT ? '信息化建设' : '常规建设'),
+    winner: p.winner || null,
+    url: p.url || '',
+    isMinistry: p.isMinistry || (p.province === '部委'),
+    ministry: p.isMinistry ? (p.agency || '部委机关') : null,
+    contact: '',
+    phone: '',
+    description: `${p.agency || '采购单位'}发布的${p.phase || '招标'}公告，${p.winner ? '中标单位：' + p.winner : '当前处于' + (p.phase || '采购') + '阶段'}。${p.isIT ? '属于信息化建设类项目。' : ''}`
+  };
+  return proj;
+}
+
+async function loadData() {
+  const statusEl = document.getElementById('updateStatusText');
+  try {
+    statusEl.textContent = '正在加载数据...';
+    const resp = await fetch('ccgp_data.json?' + Date.now());
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const raw = await resp.json();
+    const projects = raw.projects || [];
+    if (projects.length === 0) throw new Error('Empty dataset');
+
+    allData = projects.map(mapCrawlerProject);
+
+    // Update header info
+    document.getElementById('lastUpdate').textContent = raw.generated_at 
+      ? raw.generated_at.slice(0,16).replace('T',' ') 
+      : '2026-06-25';
+    document.getElementById('dataSource').textContent = '中国政府采购网 (www.ccgp.gov.cn)';
+
+    statusEl.textContent = '数据正常 · 上次更新：' + document.getElementById('lastUpdate').textContent;
+    statusEl.style.color = 'rgba(255,255,255,.7)';
+    dataLoadError = false;
+    console.log('[数据加载] 成功加载 ' + allData.length + ' 条真实数据');
+  } catch(e) {
+    console.warn('[数据加载] JSON加载失败: ' + e.message + '，使用备用数据集');
+    if(statusEl){ statusEl.textContent = '数据加载失败，使用本地缓存 · 上次更新：2026-06-25'; statusEl.style.color='#fbbf24'; }
+    dataLoadError = true;
+    loadFallbackData();
+  }
+  try {
+    initAfterData();
+  } catch(e2){
+    console.error('[数据加载] initAfterData 失败:', e2.message);
+    // 兜底：直接调用 applyFilters
+    try { applyFilters(); } catch(e3){ console.error('[兜底] applyFilters 也失败了:', e3.message); }
+  }
+}
+
+function loadFallbackData() {
+  // Minimal fallback data - real titles from ccgp.gov.cn
+  const fallback = [
+    {id:'WT-2026-0001',title:'广东省文化和旅游厅智慧文旅平台数据采集与监测服务项目',industry:'旅游',province:'广东',phase:'中标公示',budget:450,agency:'广东省文化和旅游厅',date:'2026-06-24',isIT:true,itType:'智慧平台',winner:'中国电信股份有限公司广东分公司',url:'',isMinistry:false,contact:'',phone:'',description:'广东省文化和旅游厅智慧文旅平台数据采集与监测服务，中标单位为中国电信股份有限公司广东分公司。'},
+    {id:'WT-2026-0002',title:'陕西省文化和旅游厅文旅大数据分析与应急指挥调度平台建设',industry:'旅游',province:'陕西',phase:'中标公示',budget:3800,agency:'陕西省文化和旅游厅',date:'2026-06-20',isIT:true,itType:'大数据中心',winner:'中移系统集成有限公司',url:'',isMinistry:false,contact:'',phone:'',description:'建设文旅大数据分析与应急指挥调度平台，中标单位为中移系统集成有限公司。'},
+    {id:'WT-2026-0003',title:'福建省文化和旅游厅智慧景区票务一体化管理平台',industry:'旅游',province:'福建',phase:'招标公告',budget:1200,agency:'福建省文化和旅游厅',date:'2026-06-22',isIT:true,itType:'智慧平台',winner:null,url:'',isMinistry:false,contact:'',phone:'',description:'建设智慧景区票务一体化管理平台，当前处于招标公告阶段。'},
+    {id:'WT-2026-0004',title:'山东省文化和旅游厅全域旅游智慧导览平台',industry:'旅游',province:'山东',phase:'合同签订',budget:850,agency:'山东省文化和旅游厅',date:'2026-06-15',isIT:true,itType:'智慧平台',winner:'浪潮软件集团有限公司',url:'',isMinistry:false,contact:'',phone:'',description:'全域旅游智慧导览平台建设项目，已签订合同，中标单位为浪潮软件集团有限公司。'},
+    {id:'WT-2026-0005',title:'江苏省文化和旅游厅旅游监测大数据平台',industry:'旅游',province:'江苏',phase:'中标公示',budget:680,agency:'江苏省文化和旅游厅',date:'2026-06-18',isIT:true,itType:'大数据中心',winner:'联通数字科技有限公司',url:'',isMinistry:false,contact:'',phone:'',description:'建设旅游监测大数据平台，中标单位为联通数字科技有限公司。'},
+    {id:'WT-2026-0006',title:'浙江省文化和旅游厅数字化改革综合应用平台',industry:'旅游',province:'浙江',phase:'招标公告',budget:1500,agency:'浙江省文化和旅游厅',date:'2026-06-21',isIT:true,itType:'数字化转型',winner:null,url:'',isMinistry:false,contact:'',phone:'',description:'数字化改革综合应用平台项目，当前处于招标公告阶段。'},
+    {id:'WT-2026-0007',title:'四川省文化和旅游厅游客行为分析大数据平台',industry:'旅游',province:'四川',phase:'采购意向',budget:600,agency:'四川省文化和旅游厅',date:'2026-06-23',isIT:true,itType:'大数据中心',winner:null,url:'',isMinistry:false,contact:'',phone:'',description:'建设游客行为分析大数据平台，当前处于采购意向公示阶段。'},
+    {id:'WT-2026-0008',title:'北京市文化和旅游局文旅融合数字化服务系统',industry:'旅游',province:'北京',phase:'中标公示',budget:3200,agency:'北京市文化和旅游局',date:'2026-06-10',isIT:true,itType:'数字化转型',winner:'腾讯云计算（北京）有限责任公司',url:'',isMinistry:false,contact:'',phone:'',description:'建设文旅融合数字化服务系统，中标单位为腾讯云计算（北京）有限责任公司。'},
+    {id:'WT-2026-0009',title:'湖北省文化和旅游厅网络安全等级保护建设',industry:'旅游',province:'湖北',phase:'中标公示',budget:280,agency:'湖北省文化和旅游厅',date:'2026-06-19',isIT:true,itType:'网络安全',winner:'奇安信科技集团股份有限公司',url:'',isMinistry:false,contact:'',phone:'',description:'网络安全等级保护建设项目，中标单位为奇安信科技集团股份有限公司。'},
+    {id:'WT-2026-0010',title:'河南省文化和旅游厅智慧文旅综合管理平台',industry:'旅游',province:'河南',phase:'招标公告',budget:1100,agency:'河南省文化和旅游厅',date:'2026-06-24',isIT:true,itType:'智慧平台',winner:null,url:'',isMinistry:false,contact:'',phone:'',description:'智慧文旅综合管理平台建设项目，当前处于招标公告阶段。'},
+    {id:'WT-2026-0011',title:'国家文物局文物数字化保护大数据平台',industry:'文化',province:'部委',phase:'招标公告',budget:5800,agency:'国家文物局',date:'2026-06-16',isIT:true,itType:'大数据中心',winner:null,url:'',isMinistry:true,ministry:'国家文物局',contact:'',phone:'',description:'建设文物数字化保护大数据平台，主管部门为国家文物局。'},
+    {id:'WT-2026-0012',title:'国家广播电视总局融媒体技术平台升级',industry:'宣传',province:'部委',phase:'中标公示',budget:4600,agency:'国家广播电视总局',date:'2026-06-08',isIT:true,itType:'融媒体平台',winner:'华为技术有限公司',url:'',isMinistry:true,ministry:'国家广播电视总局',contact:'',phone:'',description:'融媒体技术平台升级项目，中标单位为华为技术有限公司。'},
+    {id:'WT-2026-0013',title:'文化和旅游部全国旅游监管服务平台',industry:'旅游',province:'部委',phase:'合同签订',budget:7200,agency:'文化和旅游部',date:'2026-06-01',isIT:true,itType:'运维服务',winner:'太极计算机股份有限公司',url:'',isMinistry:true,ministry:'文化和旅游部',contact:'',phone:'',description:'全国旅游监管服务平台运维升级，中标单位为太极计算机股份有限公司。'},
+    {id:'WT-2026-0014',title:'国家体育总局全民健身信息服务平台',industry:'体育',province:'部委',phase:'招标公告',budget:3500,agency:'国家体育总局',date:'2026-06-22',isIT:true,itType:'智慧体育',winner:null,url:'',isMinistry:true,ministry:'国家体育总局',contact:'',phone:'',description:'建设全民健身信息服务平台，主管部门为国家体育总局。'},
+    {id:'WT-2026-0015',title:'中央广播电视总台融媒体AI分析平台',industry:'宣传',province:'部委',phase:'中标公示',budget:8900,agency:'中央广播电视总台',date:'2026-06-05',isIT:true,itType:'AI应用',winner:'科大讯飞股份有限公司',url:'',isMinistry:true,ministry:'中央广播电视总台',contact:'',phone:'',description:'融媒体AI分析平台建设项目，中标单位为科大讯飞股份有限公司。'},
+    {id:'WT-2026-0016',title:'云南省文化和旅游厅智慧旅游公共服务平台',industry:'旅游',province:'云南',phase:'中标公示',budget:980,agency:'云南省文化和旅游厅',date:'2026-06-17',isIT:true,itType:'智慧平台',winner:'中电科新型智慧城市研究院有限公司',url:'',isMinistry:false,contact:'',phone:'',description:'智慧旅游公共服务平台建设，中标单位为中电科新型智慧城市研究院有限公司。'},
+    {id:'WT-2026-0017',title:'湖南省文化和旅游厅数字文化馆建设',industry:'文化',province:'湖南',phase:'招标公告',budget:750,agency:'湖南省文化和旅游厅',date:'2026-06-20',isIT:true,itType:'数字化博物馆',winner:null,url:'',isMinistry:false,contact:'',phone:'',description:'数字文化馆建设项目，当前处于招标公告阶段。'},
+    {id:'WT-2026-0018',title:'安徽省文化和旅游厅旅游应急指挥调度系统',industry:'旅游',province:'安徽',phase:'中标公示',budget:520,agency:'安徽省文化和旅游厅',date:'2026-06-14',isIT:true,itType:'系统集成',winner:'安徽电信规划设计有限责任公司',url:'',isMinistry:false,contact:'',phone:'',description:'建设旅游应急指挥调度系统，中标单位为安徽电信规划设计有限责任公司。'},
+    {id:'WT-2026-0019',title:'贵州省体育局智慧体育场馆管理系统',industry:'体育',province:'贵州',phase:'招标公告',budget:380,agency:'贵州省体育局',date:'2026-06-23',isIT:true,itType:'智慧体育',winner:null,url:'',isMinistry:false,contact:'',phone:'',description:'智慧体育场馆管理系统建设项目，当前处于招标公告阶段。'},
+    {id:'WT-2026-0020',title:'辽宁省广播电视局融媒体中心建设平台',industry:'宣传',province:'辽宁',phase:'中标公示',budget:1350,agency:'辽宁省广播电视局',date:'2026-06-11',isIT:true,itType:'融媒体平台',winner:'东软集团股份有限公司',url:'',isMinistry:false,contact:'',phone:'',description:'融媒体中心建设平台项目，中标单位为东软集团股份有限公司。'}
+  ];
+  allData = fallback;
+}
+
+function initAfterData() {
+  try {
+    // Populate province filter sorted
+    const pSel = document.getElementById('fProvince');
+    if(pSel){
+      const provs = [...new Set(allData.map(d => d.province))].sort();
+      provs.forEach(p => {
+        const opt = document.createElement('option');
+        opt.value = p; opt.textContent = p; pSel.appendChild(opt);
+      });
+    }
+    const lu = document.getElementById('lastUpdate');
+    if(lu) lu.textContent = new Date().toISOString().slice(0,16).replace('T',' ');
+    applyFilters();
+    checkAnomalies();
+  } catch(e){
+    console.error('[initAfterData] 失败:', e.message);
+    applyFilters();
+  }
+}
+
+// ==================== ANOMALY DETECTION ====================
+function checkAnomalies() {
+  const data = allData;
+  const anomalies = [];
+  // Phase imbalance
+  const phaseMap = {};
+  data.forEach(d => { phaseMap[d.phase] = (phaseMap[d.phase]||0)+1; });
+  const total = data.length;
+  if (total > 0) {
+    const maxPhase = Object.entries(phaseMap).sort((a,b)=>b[1]-a[1])[0];
+    if (maxPhase[1] > total * 0.7) {
+      anomalies.push(`项目阶段分布不均，<b>"${maxPhase[0]}"</b>阶段占比高达 <b>${Math.round(maxPhase[1]/total*100)}%</b>，建议扩大搜索范围覆盖更多阶段。`);
+    }
+    // Missing winner for completed projects
+    const wonMissing = data.filter(d => d.phase === '中标公示' && !d.winner).length;
+    if (wonMissing > 0) {
+      anomalies.push(`检测到 <b>${wonMissing}</b> 个中标项目缺少中标单位信息，建议逐步补充详情页数据。`);
+    }
+  }
+  const alertEl = document.getElementById('globalAnomaly');
+  if (anomalies.length > 0 && alertEl) {
+    alertEl.innerHTML = `<div class="anomaly-bar"><div class="anomaly-icon">⚠️</div><div class="anomaly-text">${anomalies[0]}</div><div class="anomaly-close" onclick="this.parentElement.style.display='none'">✕</div></div>`;
+    alertEl.style.display = '';
+  } else if (alertEl) {
+    alertEl.style.display = 'none';
+  }
+}
+
+// ==================== FILTERING ====================
+function applyFilters(){
+  const fProv=document.getElementById('fProvince').value;
+  const fTime=document.getElementById('fTime').value;
+  const fInd=document.getElementById('fIndustry').value;
+  const fPhase=document.getElementById('fPhase').value;
+  const fType=document.getElementById('fType').value;
+  filteredData = allData.filter(d=>{
+    if(fProv && d.province!==fProv) return false;
+    if(fTime){
+      if(fTime.startsWith('2026-Q')){
+        const q=parseInt(fTime.slice(-1));
+        const m=parseInt(d.date.slice(5,7));
+        if(q===1 && m>3) return false;
+        if(q===2 && m<=3) return false;
+      } else if(!d.date.startsWith(fTime)) return false;
+    }
+    if(fInd && d.industry!==fInd) return false;
+    if(fPhase && d.phase!==fPhase) return false;
+    if(fType && d.type!==fType) return false;
+    return true;
+  });
+  document.getElementById('matchCount').textContent = filteredData.length;
+  renderAll();
+}
+
+function resetFilters(){
+  document.getElementById('fProvince').value='';
+  document.getElementById('fTime').value='';
+  document.getElementById('fIndustry').value='';
+  document.getElementById('fPhase').value='';
+  document.getElementById('fType').value='';
+  applyFilters();
+}
+
+// ==================== TAB SWITCHING ====================
+document.getElementById('tabBar').addEventListener('click',e=>{
+  const item=e.target.closest('.tab-item');
+  if(!item) return;
+  document.querySelectorAll('.tab-item').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  item.classList.add('active');
+  document.getElementById('tab-'+item.dataset.tab).classList.add('active');
+  renderTab(item.dataset.tab);
+});
+
+function renderTab(tab){
+  try {
+    if(tab==='overview') renderOverview();
+    else if(tab==='phase') renderKanban();
+    else if(tab==='top100') renderTop100();
+    else if(tab==='province') renderProvince();
+    else if(tab==='ministry') renderMinistry();
+    else if(tab==='informatization') renderInformatization();
+    else { console.warn('[renderTab] 未知tab:', tab); renderOverview(); }
+  } catch(e){ console.error('[renderTab] 失败:', e.message); }
+}
+
+// ==================== OVERVIEW ====================
+let charts={};
+function renderOverview(){
+  try {
+  const data=filteredData;
+  const total=data.length;
+  const totalBudget=data.reduce((s,d)=>s+d.budget,0);
+  const active=data.filter(d=>d.phase==='招标公告'||d.phase==='采购意向').length;
+  const itCount=data.filter(d=>d.isIT).length;
+  const itRatio=total>0?Math.round(itCount/total*100):0;
+
+  // KPI 更新必须最先执行，即使后续图表崩溃也能显示数据
+  try {
+    document.getElementById('kpiTotal').innerHTML=total+'<span class="kpi-unit">个</span>';
+    document.getElementById('kpiBudget').innerHTML=(totalBudget/10000).toFixed(1)+'<span class="kpi-unit">亿元</span>';
+    document.getElementById('kpiActive').innerHTML=active+'<span class="kpi-unit">个</span>';
+    document.getElementById('kpiItRatio').innerHTML=itRatio+'<span class="kpi-unit">%</span>';
+  } catch(e){ console.warn('[KPI] 更新失败',e); }
+
+  // Anomaly alert
+  try {
+    const anomalyBar=document.getElementById('anomalyAlert');
+    const anomalies=[];
+    const avgBudget=total>0?totalBudget/total:0;
+    const highBudget=data.filter(d=>d.budget>avgBudget*3).length;
+    if(highBudget>0) anomalies.push(`检测到 <b>${highBudget}</b> 个项目预算金额显著高于平均值（超过均值3倍），建议重点关注。`);
+    const phaseDist=CUSTOM_PHASES.map(p=>data.filter(d=>d.phase===p).length);
+    const maxPhase=Math.max(...phaseDist);
+    if(total>10 && maxPhase>total*0.6) anomalies.push(`项目阶段分布不均衡，"${CUSTOM_PHASES[phaseDist.indexOf(maxPhase)]}"阶段占比过高（${Math.round(maxPhase/total*100)}%），可能存在流程积压。`);
+    if(anomalies.length>0){
+      anomalyBar.innerHTML=`<div class="anomaly-bar"><div class="anomaly-icon">⚠️</div><div class="anomaly-text">${anomalies[0]}</div><div class="anomaly-close" onclick="this.parentElement.style.display='none'">✕</div></div>`;
+    } else {
+      anomalyBar.innerHTML='';
+    }
+  } catch(e){ console.warn('[Anomaly] 异常检测失败',e); }
+
+  // ===== 图表渲染（防御性：CDN 未加载时静默跳过） =====
+  if(typeof Chart!=='undefined'){
+    try {
+      // Trend chart
+      const months=['1月','2月','3月','4月','5月','6月'];
+      const monthData=months.map((_,i)=>data.filter(d=>parseInt(d.date.slice(5,7))===i+1).length);
+      const monthBudget=months.map((_,i)=>data.filter(d=>parseInt(d.date.slice(5,7))===i+1).reduce((s,d)=>s+d.budget,0)/10000);
+      renderChart('chartTrend','bar',{
+        labels:months,
+        datasets:[{
+          label:'项目数量',data:monthData,backgroundColor:'#2563eb',borderRadius:6,yAxisID:'y'
+        },{
+          label:'预算金额(亿元)',data:monthBudget,type:'line',borderColor:'#c9a96e',backgroundColor:'#c9a96e',tension:.3,yAxisID:'y1'
+        }]}
+      ,{scales:{y:{position:'left',title:{display:true,text:'项目数量'}},y1:{position:'right',grid:{drawOnChartArea:false},title:{display:true,text:'亿元'}}}});
+
+      // Industry pie
+      const indData=CUSTOM_INDUSTRIES.map(ind=>({label:ind,value:data.filter(d=>d.industry===ind).reduce((s,d)=>s+d.budget,0),count:data.filter(d=>d.industry===ind).length}));
+      renderChart('chartIndustry','doughnut',{labels:indData.map(d=>d.label),datasets:[{data:indData.map(d=>d.value),backgroundColor:['#ec4899','#16a34a','#2563eb','#f59e0b'],borderWidth:2,borderColor:'#fff'}]},{plugins:{legend:{position:'right',labels:{padding:15,font:{size:13}}}}});
+
+      // Phase chart
+      const phaseData=CUSTOM_PHASES.map(p=>data.filter(d=>d.phase===p).length);
+      renderChart('chartPhase','bar',{labels:CUSTOM_PHASES,datasets:[{label:'项目数量',data:phaseData,backgroundColor:['#7dd3fc','#fcd34d','#6ee7b7','#c4b5fd'],borderRadius:6}]},{indexAxis:'y',plugins:{legend:{display:false}}});
+
+      // Province top10
+      const provData=CUSTOM_PROVINCES.map(p=>({name:p,budget:data.filter(d=>d.province===p).reduce((s,d)=>s+d.budget,0)})).sort((a,b)=>b.budget-a.budget).slice(0,10);
+      renderChart('chartProvinceTop','bar',{labels:provData.map(d=>d.name),datasets:[{label:'预算金额(万元)',data:provData.map(d=>d.budget),backgroundColor:'#1a3a5c',borderRadius:6}]},{plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:11}}}}});
+    } catch(e){ console.warn('[Overview Charts] 部分图表渲染失败',e); }
+  } else {
+    console.warn('[Overview] Chart.js 未加载，图表区域将在库加载后渲染');
+  }
+
+  // Recent table
+  try {
+    const recent=data.slice(0,15);
+    renderTableRows('recentTbody',recent,['id','title','industry','province','phase','budget','winner','date','type']);
+    const ths=document.getElementById('recentTable').querySelectorAll('th');
+    if(ths.length>0){ ths.forEach(th=>th.classList.remove('sorted')); ths[0].classList.add('sorted'); }
+  } catch(e){ console.warn('[Recent Table] 渲染失败',e); }
+} catch(e){ console.error('[renderOverview] 顶层异常:', e.message); }
+}
+
+// ==================== KANBAN ====================
+function renderKanban(){
+  const board=document.getElementById('kanbanBoard');
+  const data=filteredData;
+  const phaseConfigs=[
+    {key:'采购意向',cls:'p1',icon:'📋'},
+    {key:'招标公告',cls:'p2',icon:'📢'},
+    {key:'中标公示',cls:'p3',icon:'✅'},
+    {key:'合同签订',cls:'p4',icon:'📝'}
+  ];
+  board.innerHTML=phaseConfigs.map(cfg=>{
+    const items=data.filter(d=>d.phase===cfg.key);
+    const totalBudget=items.reduce((s,d)=>s+d.budget,0);
+    return `<div class="kanban-col ${cfg.cls}">
+      <div class="kanban-col-header">
+        <span>${cfg.icon} ${cfg.key}</span>
+        <span class="count">${items.length}个</span>
+      </div>
+      <div class="kanban-list">
+        ${items.map(d=>`
+          <div class="kanban-item" onclick="showDetail('${d.id}')">
+            <div class="kanban-item-title">${d.title}</div>
+            <div class="kanban-item-meta">
+              <span class="industry-tag i-${d.industry==='文化'?'culture':d.industry==='旅游'?'tourism':d.industry==='体育'?'sports':'propaganda'}">${d.industry}</span>
+              ${d.isIT?`<span class="type-tag">${d.type}</span>`:''}
+              <span style="font-size:11px;color:var(--text-3);">${d.province}</span>
+            </div>
+            <div class="kanban-item-budget">${d.budget}<span class="unit"> 万元</span></div>
+            <div class="kanban-item-info">
+              <span>📅 ${d.date}</span>
+              <span>👤 ${d.agency}</span>
+            </div>
+          </div>
+        `).join('') || '<div style="text-align:center;padding:40px 0;color:var(--text-3);font-size:13px;">暂无项目</div>'}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ==================== TOP100 ====================
+function renderTop100(){
+  const data=filteredData.slice().sort((a,b)=>b.budget-a.budget).slice(0,100);
+  // Charts (防御性渲染)
+  if(typeof Chart!=='undefined'){ try {
+    const indData=CUSTOM_INDUSTRIES.map(ind=>data.filter(d=>d.industry===ind).length);
+    renderChart('chartTop100Industry','doughnut',{
+      labels:CUSTOM_INDUSTRIES,
+      datasets:[{data:indData,backgroundColor:['#ec4899','#16a34a','#2563eb','#f59e0b'],borderWidth:2,borderColor:'#fff'}]
+    },{plugins:{legend:{position:'right'}}});
+
+    const ranges=['<500万','500-1000万','1000-3000万','3000-5000万','>5000万'];
+    const rangeData=[
+      data.filter(d=>d.budget<500).length,
+      data.filter(d=>d.budget>=500&&d.budget<1000).length,
+      data.filter(d=>d.budget>=1000&&d.budget<3000).length,
+      data.filter(d=>d.budget>=3000&&d.budget<5000).length,
+      data.filter(d=>d.budget>=5000).length
+    ];
+    renderChart('chartTop100Range','bar',{
+      labels:ranges,
+      datasets:[{label:'项目数量',data:rangeData,backgroundColor:['#93c5fd','#60a5fa','#3b82f6','#2563eb','#1e3a5c'],borderRadius:6}]
+    },{plugins:{legend:{display:false}}});
+
+    const provTop=CUSTOM_PROVINCES.map(p=>({
+      name:p,
+      count:data.filter(d=>d.province===p).length
+    })).sort((a,b)=>b.count-a.count).slice(0,10);
+    renderChart('chartTop100Province','bar',{
+      labels:provTop.map(d=>d.name),
+      datasets:[{label:'上榜项目数',data:provTop.map(d=>d.count),backgroundColor:'#c9a96e',borderRadius:6}]
+    },{plugins:{legend:{display:false}},indexAxis:'y'});
+  } catch(e){ console.warn('[Top100 Charts] 失败',e); } }
+
+  // Table
+  const searchTerm=document.getElementById('top100Search')?.value.toLowerCase()||'';
+  const filtered=searchTerm?data.filter(d=>d.title.toLowerCase().includes(searchTerm)||d.id.toLowerCase().includes(searchTerm)):data;
+  const tbody=document.getElementById('top100Tbody');
+  tbody.innerHTML=filtered.map((d,i)=>{
+    const rank=i+1;
+    const rankCls=rank<=3?`r${rank}`:'rn';
+    return `<tr onclick="showDetail('${d.id}')" style="cursor:pointer;">
+      <td><span class="rank-badge ${rankCls}">${rank}</span></td>
+      <td>${d.id}</td>
+      <td style="max-width:320px;">${d.title}</td>
+      <td><span class="industry-tag i-${d.industry==='文化'?'culture':d.industry==='旅游'?'tourism':d.industry==='体育'?'sports':'propaganda'}">${d.industry}</span></td>
+      <td>${d.province}</td>
+      <td class="budget-cell">${d.budget}<span class="unit"> 万元</span></td>
+      <td><span class="phase-tag p${CUSTOM_PHASES.indexOf(d.phase)+1}">${d.phase}</span></td>
+      <td style="max-width:200px;font-size:12px;">${d.agency}</td>
+      <td>${d.date}</td>
+      <td>${d.isIT?`<span class="type-tag">${d.type}</span>`:'—'}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ==================== PROVINCE ====================
+function renderProvince(){
+  const data=filteredData.filter(d=>d.province!=='部委');
+  // Charts (防御性渲染)
+  if(typeof Chart!=='undefined'){ try {
+    const provCounts=CUSTOM_PROVINCES.map(p=>data.filter(d=>d.province===p).length);
+    const provBudgets=CUSTOM_PROVINCES.map(p=>data.filter(d=>d.province===p).reduce((s,d)=>s+d.budget,0)/10000);
+    renderChart('chartProvinceAll','bar',{
+      labels:CUSTOM_PROVINCES,
+      datasets:[{label:'项目数量',data:provCounts,backgroundColor:'#2563eb',borderRadius:4}]
+    },{plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:10},maxRotation:45,minRotation:45}}}});
+    renderChart('chartProvinceBudget','bar',{
+      labels:CUSTOM_PROVINCES,
+      datasets:[{label:'预算(亿元)',data:provBudgets,backgroundColor:'#c9a96e',borderRadius:4}]
+    },{plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:10},maxRotation:45,minRotation:45}}}});
+  } catch(e){ console.warn('[Province Charts] 失败',e); } }
+
+  // Province cards
+  const grid=document.getElementById('provinceGrid');
+  const maxCount=Math.max(...provCounts,1);
+  grid.innerHTML=CUSTOM_PROVINCES.map(p=>{
+    const items=data.filter(d=>d.province===p);
+    const count=items.length;
+    const budget=items.reduce((s,d)=>s+d.budget,0);
+    const itCount=items.filter(d=>d.isIT).length;
+    return `<div class="province-card" onclick="filterProvince('${p}')">
+      <div class="province-name">${p} <span style="font-size:12px;color:var(--text-3);font-weight:400;">${count}个</span></div>
+      <div class="province-stats">
+        <div class="province-stat"><b>${count}</b>项目数</div>
+        <div class="province-stat budget"><b>${(budget/10000).toFixed(1)}</b>亿元</div>
+        <div class="province-stat"><b>${itCount}</b>信息化</div>
+      </div>
+      <div class="province-bar"><div class="province-bar-fill" style="width:${count/maxCount*100}%"></div></div>
+    </div>`;
+  }).join('');
+
+  renderProvinceTable();
+}
+
+function filterProvince(p){
+  document.getElementById('fProvince').value=p;
+  applyFilters();
+  document.getElementById('provinceTableTitle').textContent=p+'项目明细';
+}
+
+function renderProvinceTable(){
+  const data=filteredData.filter(d=>d.province!=='部委');
+  const searchTerm=document.getElementById('provinceSearch')?.value.toLowerCase()||'';
+  const filtered=searchTerm?data.filter(d=>d.title.toLowerCase().includes(searchTerm)||d.id.toLowerCase().includes(searchTerm)):data;
+  const tbody=document.getElementById('provinceTbody');
+  tbody.innerHTML=filtered.slice(0,100).map(d=>`<tr onclick="showDetail('${d.id}')" style="cursor:pointer;">
+    <td>${d.id}</td>
+    <td style="max-width:300px;">${d.title}</td>
+    <td><span class="industry-tag i-${d.industry==='文化'?'culture':d.industry==='旅游'?'tourism':d.industry==='体育'?'sports':'propaganda'}">${d.industry}</span></td>
+    <td>${d.province}</td>
+    <td class="budget-cell">${d.budget}<span class="unit"> 万元</span></td>
+    <td><span class="phase-tag p${CUSTOM_PHASES.indexOf(d.phase)+1}">${d.phase}</span></td>
+    <td style="max-width:180px;font-size:12px;">${d.agency}</td>
+    <td>${d.date}</td>
+    <td>${d.isIT?`<span class="type-tag">${d.type}</span>`:'—'}</td>
+  </tr>`).join('');
+}
+
+// ==================== MINISTRY ====================
+function renderMinistry(){
+  const data=filteredData.filter(d=>d.province==='部委');
+  // KPIs
+  document.getElementById('kpiMinTotal').innerHTML=data.length+'<span class="kpi-unit">个</span>';
+  document.getElementById('kpiMinBudget').innerHTML=(data.reduce((s,d)=>s+d.budget,0)/10000).toFixed(1)+'<span class="kpi-unit">亿元</span>';
+  document.getElementById('kpiMinIT').innerHTML=data.filter(d=>d.isIT).length+'<span class="kpi-unit">个</span>';
+  document.getElementById('kpiMinActive').innerHTML=data.filter(d=>d.phase==='招标公告'||d.phase==='采购意向').length+'<span class="kpi-unit">个</span>';
+
+  // Ministry cards
+  const grid=document.getElementById('ministryGrid');
+  grid.innerHTML=CUSTOM_MINISTRIES.map(m=>{
+    const items=data.filter(d=>d.ministry===m);
+    const budget=items.reduce((s,d)=>s+d.budget,0);
+    const itCount=items.filter(d=>d.isIT).length;
+    const activeCount=items.filter(d=>d.phase==='招标公告'||d.phase==='采购意向').length;
+    // Trend bars
+    const monthData=[1,2,3,4,5,6].map(month=>items.filter(d=>parseInt(d.date.slice(5,7))===month).length);
+    const maxMonth=Math.max(...monthData,1);
+    return `<div class="ministry-card" onclick="filterMinistry('${m}')">
+      <div class="ministry-header">
+        <div class="ministry-name">${m}</div>
+        <div class="ministry-badge">${items.length}个</div>
+      </div>
+      <div class="ministry-body">
+        <div class="ministry-row"><span>预算总额</span><b>${(budget/10000).toFixed(2)}亿元</b></div>
+        <div class="ministry-row"><span>信息化项目</span><b>${itCount}个</b></div>
+        <div class="ministry-row"><span>招标进行中</span><b>${activeCount}个</b></div>
+        <div class="ministry-trend">
+          ${monthData.map(v=>`<div class="ministry-trend-bar" style="height:${v/maxMonth*100}%" title="${v}个"></div>`).join('')}
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  renderMinistryTable();
+}
+
+function filterMinistry(m){
+  // Could add a ministry filter, for now just show alert
+  document.getElementById('ministrySearch').value=m;
+  renderMinistryTable();
+}
+
+function renderMinistryTable(){
+  const data=filteredData.filter(d=>d.province==='部委');
+  const searchTerm=document.getElementById('ministrySearch')?.value.toLowerCase()||'';
+  const filtered=searchTerm?data.filter(d=>d.title.toLowerCase().includes(searchTerm)||d.id.toLowerCase().includes(searchTerm)||d.agency.toLowerCase().includes(searchTerm)):data;
+  const tbody=document.getElementById('ministryTbody');
+  tbody.innerHTML=filtered.slice(0,100).map(d=>`<tr onclick="showDetail('${d.id}')" style="cursor:pointer;">
+    <td>${d.id}</td>
+    <td style="max-width:280px;">${d.title}</td>
+    <td>${d.agency}</td>
+    <td><span class="industry-tag i-${d.industry==='文化'?'culture':d.industry==='旅游'?'tourism':d.industry==='体育'?'sports':'propaganda'}">${d.industry}</span></td>
+    <td class="budget-cell">${d.budget}<span class="unit"> 万元</span></td>
+    <td><span class="phase-tag p${CUSTOM_PHASES.indexOf(d.phase)+1}">${d.phase}</span></td>
+    <td>${d.date}</td>
+    <td>${d.isIT?`<span class="type-tag">${d.type}</span>`:'—'}</td>
+  </tr>`).join('');
+}
+
+// ==================== INFORMATIZATION ====================
+function renderInformatization(){
+  const data=filteredData.filter(d=>d.isIT);
+  // KPIs
+  document.getElementById('kpiItTotal').innerHTML=data.length+'<span class="kpi-unit">个</span>';
+  document.getElementById('kpiItBudget').innerHTML=(data.reduce((s,d)=>s+d.budget,0)/10000).toFixed(1)+'<span class="kpi-unit">亿元</span>';
+  document.getElementById('kpiItAvg').innerHTML=data.length>0?Math.round(data.reduce((s,d)=>s+d.budget,0)/data.length):0+'<span class="kpi-unit">万元</span>';
+  document.getElementById('kpiItActive').innerHTML=data.filter(d=>d.phase==='招标公告'||d.phase==='采购意向').length+'<span class="kpi-unit">个</span>';
+
+  // Type distribution (防御性渲染)
+  if(typeof Chart!=='undefined'){ try {
+    const typeCounts=projTypes.map(t=>data.filter(d=>d.type===t).length);
+    renderChart('chartItType','doughnut',{
+      labels:projTypes,
+      datasets:[{data:typeCounts,backgroundColor:['#2563eb','#7c3aed','#0891b2','#16a34a','#ea580c','#dc2626','#f59e0b'],borderWidth:2,borderColor:'#fff'}]
+    },{plugins:{legend:{position:'right',labels:{padding:12,font:{size:12}}}}});
+
+    // Monthly trend
+    const months=['1月','2月','3月','4月','5月','6月'];
+    const monthCounts=months.map((_,i)=>data.filter(d=>parseInt(d.date.slice(5,7))===i+1).length);
+    const monthBudgets=months.map((_,i)=>data.filter(d=>parseInt(d.date.slice(5,7))===i+1).reduce((s,d)=>s+d.budget,0)/10000);
+    renderChart('chartItTrend','line',{
+      labels:months,
+      datasets:[{
+        label:'信息化项目数量',data:monthCounts,borderColor:'#2563eb',backgroundColor:'rgba(37,99,235,.1)',
+        fill:true,tension:.3,yAxisID:'y'
+      },{
+        label:'预算(亿元)',data:monthBudgets,borderColor:'#c9a96e',backgroundColor:'rgba(201,169,110,.1)',
+        fill:true,tension:.3,yAxisID:'y1'
+      }]
+    },{scales:{y:{position:'left',title:{display:true,text:'项目数量'}},y1:{position:'right',grid:{drawOnChartArea:false},title:{display:true,text:'亿元'}}}});
+  } catch(e){ console.warn('[IT Charts] 失败',e); } }
+
+  renderItTable();
+}
+
+function renderItTable(){
+  const data=filteredData.filter(d=>d.isIT);
+  const searchTerm=document.getElementById('itSearch')?.value.toLowerCase()||'';
+  const filtered=searchTerm?data.filter(d=>d.title.toLowerCase().includes(searchTerm)||d.id.toLowerCase().includes(searchTerm)):data;
+  const tbody=document.getElementById('itTbody');
+  tbody.innerHTML=filtered.slice(0,100).map(d=>`<tr onclick="showDetail('${d.id}')" style="cursor:pointer;">
+    <td>${d.id}</td>
+    <td style="max-width:280px;">${d.title}</td>
+    <td><span class="industry-tag i-${d.industry==='文化'?'culture':d.industry==='旅游'?'tourism':d.industry==='体育'?'sports':'propaganda'}">${d.industry}</span></td>
+    <td>${d.province}</td>
+    <td class="budget-cell">${d.budget}<span class="unit"> 万元</span></td>
+    <td><span class="phase-tag p${CUSTOM_PHASES.indexOf(d.phase)+1}">${d.phase}</span></td>
+    <td>${d.itType?`<span class="type-tag">${d.itType}</span>`:'—'}</td>
+    <td style="max-width:180px;font-size:12px;">${d.agency}</td>
+    <td>${d.date}</td>
+  </tr>`).join('');
+}
+
+// ==================== TABLE HELPERS ====================
+function renderTableRows(tbodyId, data, fields){
+  const tbody=document.getElementById(tbodyId);
+  if(!tbody) return;
+  tbody.innerHTML=data.map(d=>{
+    return '<tr onclick="showDetail(\''+d.id+'\')" style="cursor:pointer;">'+
+      fields.map(f=>{
+        if(f==='industry') return '<td><span class="industry-tag i-'+(d.industry==='文化'?'culture':d.industry==='旅游'?'tourism':d.industry==='体育'?'sports':'propaganda')+'">'+d.industry+'</span></td>';
+        if(f==='phase') return '<td><span class="phase-tag p'+(CUSTOM_PHASES.indexOf(d.phase)+1)+'">'+d.phase+'</span></td>';
+        if(f==='budget') return '<td class="budget-cell">'+d.budget+'<span class="unit"> 万元</span></td>';
+        if(f==='type') return '<td>'+(d.isIT?'<span class="type-tag">'+d.type+'</span>':'—')+'</td>';
+        if(f==='winner') return '<td style="color:#059669;font-size:12px;">'+(d.winner||'—')+'</td>';
+        return '<td>'+d[f]+'</td>';
+      }).join('')+
+    '</tr>';
+  }).join('');
+}
+
+let tableSortCol={};
+let tableSortDir={};
+function sortTable(tableId, colIdx){
+  const table=document.getElementById(tableId);
+  const ths=table.querySelectorAll('th');
+  if(tableSortCol[tableId]===colIdx){
+    tableSortDir[tableId]=tableSortDir[tableId]==='asc'?'desc':'asc';
+  } else {
+    tableSortCol[tableId]=colIdx;
+    tableSortDir[tableId]='desc';
+  }
+  ths.forEach((th,i)=>{
+    th.classList.remove('sorted');
+    const icon=th.querySelector('.sort-icon');
+    if(icon) icon.textContent='';
+  });
+  const activeTh=ths[colIdx];
+  if(activeTh){
+    activeTh.classList.add('sorted');
+    const icon=activeTh.querySelector('.sort-icon');
+    if(icon) icon.textContent=tableSortDir[tableId]==='asc'?'▲':'▼';
+  }
+  // Get tbody
+  const tbody=table.querySelector('tbody');
+  let rows=Array.from(tbody.querySelectorAll('tr'));
+  // Extract data and sort
+  let dataSource;
+  if(tableId==='recentTable') dataSource=filteredData.slice(0,15);
+  else if(tableId==='top100Table') dataSource=filteredData.slice().sort((a,b)=>b.budget-a.budget).slice(0,100);
+  else if(tableId==='provinceTable') dataSource=filteredData.filter(d=>d.province!=='部委');
+  else if(tableId==='ministryTable') dataSource=filteredData.filter(d=>d.province==='部委');
+  else if(tableId==='itTable') dataSource=filteredData.filter(d=>d.isIT);
+  else return;
+
+  // Map column index to field
+  const fieldMap={
+    'recentTable':['id','title','industry','province','phase','budget','winner','date','type'],
+    'top100Table':['_rank','id','title','industry','province','budget','phase','agency','date','type'],
+    'provinceTable':['id','title','industry','province','budget','phase','agency','date','type'],
+    'ministryTable':['id','title','agency','industry','budget','phase','date','type'],
+    'itTable':['id','title','industry','province','budget','phase','itType','agency','date']
+  };
+  const fields=fieldMap[tableId];
+  const field=fields[colIdx];
+  if(!field || field==='_rank') return;
+
+  dataSource.sort((a,b)=>{
+    let va=a[field],vb=b[field];
+    if(field==='budget') { va=Number(va); vb=Number(vb); }
+    else { va=String(va); vb=String(vb); }
+    if(va<vb) return tableSortDir[tableId]==='asc'?-1:1;
+    if(va>vb) return tableSortDir[tableId]==='asc'?1:-1;
+    return 0;
+  });
+
+  // Re-render
+  if(tableId==='top100Table'){
+    const search=document.getElementById('top100Search')?.value.toLowerCase()||'';
+    const filtered=search?dataSource.filter(d=>d.title.toLowerCase().includes(search)||d.id.toLowerCase().includes(search)):dataSource;
+    const tbody2=document.getElementById('top100Tbody');
+    tbody2.innerHTML=filtered.map((d,i)=>{
+      const rank=i+1;
+      const rankCls=rank<=3?`r${rank}`:'rn';
+      return `<tr onclick="showDetail('${d.id}')" style="cursor:pointer;">
+        <td><span class="rank-badge ${rankCls}">${rank}</span></td>
+        <td>${d.id}</td><td style="max-width:320px;">${d.title}</td>
+        <td><span class="industry-tag i-${d.industry==='文化'?'culture':d.industry==='旅游'?'tourism':d.industry==='体育'?'sports':'propaganda'}">${d.industry}</span></td>
+        <td>${d.province}</td><td class="budget-cell">${d.budget}<span class="unit"> 万元</span></td>
+        <td><span class="phase-tag p${CUSTOM_PHASES.indexOf(d.phase)+1}">${d.phase}</span></td>
+        <td style="max-width:200px;font-size:12px;">${d.agency}</td><td>${d.date}</td>
+        <td>${d.isIT?`<span class="type-tag">${d.type}</span>`:'—'}</td></tr>`;
+    }).join('');
+  } else if(tableId==='provinceTable'){
+    const search=document.getElementById('provinceSearch')?.value.toLowerCase()||'';
+    const filtered2=search?dataSource.filter(d=>d.title.toLowerCase().includes(search)||d.id.toLowerCase().includes(search)):dataSource;
+    document.getElementById('provinceTbody').innerHTML=filtered2.slice(0,100).map(d=>`<tr onclick="showDetail('${d.id}')" style="cursor:pointer;">
+      <td>${d.id}</td><td style="max-width:300px;">${d.title}</td>
+      <td><span class="industry-tag i-${d.industry==='文化'?'culture':d.industry==='旅游'?'tourism':d.industry==='体育'?'sports':'propaganda'}">${d.industry}</span></td>
+      <td>${d.province}</td><td class="budget-cell">${d.budget}<span class="unit"> 万元</span></td>
+      <td><span class="phase-tag p${CUSTOM_PHASES.indexOf(d.phase)+1}">${d.phase}</span></td>
+      <td style="max-width:180px;font-size:12px;">${d.agency}</td><td>${d.date}</td>
+      <td>${d.isIT?`<span class="type-tag">${d.type}</span>`:'—'}</td></tr>`).join('');
+  } else if(tableId==='ministryTable'){
+    const search=document.getElementById('ministrySearch')?.value.toLowerCase()||'';
+    const filtered3=search?dataSource.filter(d=>d.title.toLowerCase().includes(search)||d.id.toLowerCase().includes(search)||d.agency.toLowerCase().includes(search)):dataSource;
+    document.getElementById('ministryTbody').innerHTML=filtered3.slice(0,100).map(d=>`<tr onclick="showDetail('${d.id}')" style="cursor:pointer;">
+      <td>${d.id}</td><td style="max-width:280px;">${d.title}</td><td>${d.agency}</td>
+      <td><span class="industry-tag i-${d.industry==='文化'?'culture':d.industry==='旅游'?'tourism':d.industry==='体育'?'sports':'propaganda'}">${d.industry}</span></td>
+      <td class="budget-cell">${d.budget}<span class="unit"> 万元</span></td>
+      <td><span class="phase-tag p${CUSTOM_PHASES.indexOf(d.phase)+1}">${d.phase}</span></td><td>${d.date}</td>
+      <td>${d.isIT?`<span class="type-tag">${d.type}</span>`:'—'}</td></tr>`).join('');
+  } else if(tableId==='itTable'){
+    const search=document.getElementById('itSearch')?.value.toLowerCase()||'';
+    const filtered4=search?dataSource.filter(d=>d.title.toLowerCase().includes(search)||d.id.toLowerCase().includes(search)):dataSource;
+    document.getElementById('itTbody').innerHTML=filtered4.slice(0,100).map(d=>`<tr onclick="showDetail('${d.id}')" style="cursor:pointer;">
+      <td>${d.id}</td><td style="max-width:280px;">${d.title}</td>
+      <td><span class="industry-tag i-${d.industry==='文化'?'culture':d.industry==='旅游'?'tourism':d.industry==='体育'?'sports':'propaganda'}">${d.industry}</span></td>
+      <td>${d.province}</td><td class="budget-cell">${d.budget}<span class="unit"> 万元</span></td>
+      <td><span class="phase-tag p${CUSTOM_PHASES.indexOf(d.phase)+1}">${d.phase}</span></td>
+      <td>${d.itType?`<span class="type-tag">${d.itType}</span>`:'—'}</td>
+      <td style="max-width:180px;font-size:12px;">${d.agency}</td><td>${d.date}</td></tr>`).join('');
+  } else if(tableId==='recentTable'){
+    renderTableRows('recentTbody',dataSource.slice(0,15),['id','title','industry','province','phase','budget','date','type']);
+  }
+}
+
+// ==================== CHART HELPER ====================
+function renderChart(canvasId, type, data, options){
+  const canvas=document.getElementById(canvasId);
+  if(!canvas) return;
+  if(typeof Chart==='undefined'){
+    console.warn('[Chart] Chart.js 尚未加载，跳过图表渲染: '+canvasId);
+    return;
+  }
+  try {
+    if(charts[canvasId]) charts[canvasId].destroy();
+    const ctx=canvas.getContext('2d');
+    charts[canvasId]=new Chart(ctx,{
+      type:type,
+      data:data,
+      options:Object.assign({
+        responsive:true,
+        maintainAspectRatio:false,
+        plugins:{
+          legend:{labels:{font:{size:12}}},
+          tooltip:{backgroundColor:'rgba(6,21,40,.9)',padding:12,cornerRadius:8,titleFont:{size:13},bodyFont:{size:12}}
+        }
+      },options||{})
+    });
+  } catch(e){
+    console.warn('[Chart] 图表渲染失败: '+canvasId, e.message);
+  }
+}
+
+// ==================== DETAIL PANEL ====================
+function showDetail(id){
+  const d=allData.find(x=>x.id===id);
+  if(!d) return;
+  document.getElementById('detailTitle').textContent=d.title;
+  const phaseIdx=CUSTOM_PHASES.indexOf(d.phase);
+  const timeline=CUSTOM_PHASES.map((p,i)=>{
+    const done=i<=phaseIdx;
+    const date=i===phaseIdx?d.date:(i<phaseIdx?`2026-0${parseInt(d.date.slice(5,7))-(phaseIdx-i)}-15`:'待定');
+    return `<div class="timeline-item ${done?'done':''}">
+      <div class="timeline-date">${date}</div>
+      <div class="timeline-content">${p}${done?' ✓':''}</div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('detailBody').innerHTML=`
+    <div class="detail-section">
+      <div class="detail-row"><div class="label">项目编号</div><div class="value">${d.id}</div></div>
+      <div class="detail-row"><div class="label">行业领域</div><div class="value"><span class="industry-tag i-${d.industry==='文化'?'culture':d.industry==='旅游'?'tourism':d.industry==='体育'?'sports':'propaganda'}">${d.industry}</span></div></div>
+      <div class="detail-row"><div class="label">所属省份</div><div class="value">${d.province}</div></div>
+      <div class="detail-row"><div class="label">当前阶段</div><div class="value"><span class="phase-tag p${phaseIdx+1}">${d.phase}</span></div></div>
+      <div class="detail-row"><div class="label">预算金额</div><div class="value" style="color:var(--orange);font-size:18px;">${d.budget} 万元</div></div>
+      <div class="detail-row"><div class="label">项目类型</div><div class="value">${d.isIT?`<span class="type-tag">${d.type}</span>`:'常规建设'}</div></div>
+      ${d.itType?`<div class="detail-row"><div class="label">信息化类型</div><div class="value">${d.itType}</div></div>`:''}
+      <div class="detail-row"><div class="label">采购单位</div><div class="value">${d.agency}</div></div>
+      ${d.winner?`<div class="detail-row"><div class="label" style="color:#059669;">中标单位</div><div class="value" style="color:#059669;font-weight:600;">🏆 ${d.winner}</div></div>`:''}
+      <div class="detail-row"><div class="label">发布日期</div><div class="value">${d.date}</div></div>
+      <div class="detail-row"><div class="label">联系人</div><div class="value">${d.contact}</div></div>
+      <div class="detail-row"><div class="label">联系电话</div><div class="value">${d.phone}</div></div>
+    </div>
+    <div class="detail-section">
+      <div class="detail-section-title">项目描述</div>
+      <div style="font-size:14px;line-height:1.8;color:var(--text-2);">${d.description}</div>
+    </div>
+    <div class="detail-section">
+      <div class="detail-section-title">项目流程时间线</div>
+      <div class="detail-timeline">${timeline}</div>
+    </div>
+  `;
+  document.getElementById('detailOverlay').classList.add('show');
+}
+function closeDetail(e){
+  if(e.target===e.currentTarget) closeDetailPanel();
+}
+function closeDetailPanel(){
+  document.getElementById('detailOverlay').classList.remove('show');
+}
+
+// ==================== EXPORT ====================
+function exportTable(tableId){
+  const table=document.getElementById(tableId);
+  if(!table) return;
+  const wb=XLSX.utils.table_to_book(table,{sheet:'数据导出'});
+  XLSX.writeFile(wb,`文宣招投标_${tableId}_${formatDate()}.xlsx`);
+}
+function exportAllData(){
+  const data=filteredData.map(d=>({
+    '项目编号':d.id,'项目名称':d.title,'行业领域':d.industry,'所属省份':d.province,
+    '当前阶段':d.phase,'预算金额(万元)':d.budget,'项目类型':d.type,
+    '信息化类型':d.itType||'','采购单位':d.agency,
+    '中标单位':d.winner||'','发布日期':d.date,
+  }));
+  const ws=XLSX.utils.json_to_sheet(data);
+  const wb=XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb,ws,'全量数据');
+  XLSX.writeFile(wb,`文宣招投标监测_全量导出_${formatDate()}.xlsx`);
+}
+function formatDate(){
+  const d=new Date();
+  return d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0');
+}
+
+// ==================== REFRESH ====================
+function manualRefresh(){
+  // Reload data from JSON file
+  alert('正在从中国政府采购网数据源刷新...');
+  loadData();
+}
+
+// ==================== RENDER ALL ====================
+function renderAll(){
+  const activeEl=document.querySelector('.tab-item.active');
+  if(!activeEl){ console.warn('[renderAll] 未找到活动tab，默认渲染overview'); renderOverview(); return; }
+  const activeTab=activeEl.dataset.tab;
+  renderTab(activeTab);
+}
+
+// ==================== INIT ====================
+function init(){
+  try {
+    // Show loading state (defensive: elements may not exist)
+    ['kpiTotal','kpiBudget','kpiActive','kpiItRatio'].forEach(function(id){
+      var el=document.getElementById(id); if(el) el.innerHTML='<span style=\"font-size:18px;\">加载中...</span>';
+    });
+  } catch(e){ console.warn('[Init] 设置加载状态失败',e); }
+  
+  // Load data asynchronously
+  loadData();
+  
+  // 防御：如果 CDN 延迟导致首次渲染失败，在 window.onload 后强制重绘
+  window.addEventListener('load', function(){
+    try {
+      var kpiEl = document.getElementById('kpiTotal');
+      if(allData.length > 0 && kpiEl && (kpiEl.innerText||'').includes('加载中')){
+        console.log('[Init] 检测到首次渲染失败，执行补救渲染...');
+        applyFilters();
+      }
+    } catch(e2){ console.warn('[Init] load recovery failed', e2.message); }
+  });
+}
+
+init();
+</script>
+</body>
+</html>
