@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python virtual environments
+venv/
+.venv/
+env/
+
+# Build output
+dist/
+build/
+*.egg-info/
+
+# Data backups
+*_backup.json
+*_backup_*.json
+*_clean.json
+*_temp.*
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment files
+.env
+.env.local
+
+# Cache
+.cache/
+.parcel-cache/
+
+# Temporary files
+tmp/
+temp/
