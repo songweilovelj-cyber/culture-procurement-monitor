@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "check": "node --check server.js && node --check src/scoring.js && node --check src/macroModel.js && node --check public/app.js",
+    "check": "node --check server.js && node --check src/scoring.js && node --check src/macroModel.js && node --check public/app.js && node --check public/static-engine.js && node --check scripts/build-pages.mjs",
+    "build:pages": "node scripts/build-pages.mjs",
     "collect:funds": "node collectors/collect-eastmoney-funds.js"
   }
 }
