@@ -22,9 +22,18 @@ const files = [
   "docs/PRODUCT_RESEARCH.md",
   "public/app.js",
   "public/index.html",
+  "public/static-engine.js",
   "public/styles.css",
+  "docs/index.html",
+  "docs/app.js",
+  "docs/static-engine.js",
+  "docs/styles.css",
+  "docs/data/funds.json",
+  "docs/data/market.json",
+  "docs/data/portfolio.json",
   "src/macroModel.js",
   "src/scoring.js",
+  "scripts/build-pages.mjs",
   "scripts/deploy-github.mjs",
   "releases/fund-investment-ai-agent-v1.0.0.zip"
 ];
