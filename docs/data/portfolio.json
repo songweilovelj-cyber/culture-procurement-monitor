@@ -1,0 +1,11 @@
+{
+  "userType": "普通长期投资者",
+  "targetHorizonYears": 5,
+  "riskTolerance": 6,
+  "holdings": [
+    { "name": "沪深300ETF", "theme": "csi300", "weight": 35 },
+    { "name": "人工智能ETF", "theme": "ai", "weight": 12 },
+    { "name": "红利低波ETF", "theme": "dividend_low_vol", "weight": 18 },
+    { "name": "货币基金", "theme": "cash", "weight": 35 }
+  ]
+}
