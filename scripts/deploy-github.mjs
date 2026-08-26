@@ -141,12 +141,19 @@ async function verify(token) {
 }
 
 async function main() {
-  ensureFileList();
   const tag = process.argv.includes("--tag")
     ? process.argv[process.argv.indexOf("--tag") + 1]
     : "v1.0.0";
   const token = tokenFromGitCredential();
   console.log(`[Deploy] ${owner}/${repo} ${tag}`);
+  if (process.argv.includes("--tag-only")) {
+    const tagStatus = await createTag(tag, token);
+    const info = await verify(token);
+    console.log(`[Tag] ${tag} ${tagStatus}`);
+    console.log(`[Repo] ${info.url}`);
+    return;
+  }
+  ensureFileList();
   let latestSha = "";
   for (const [index, file] of files.entries()) {
     const sizeKb = (statSync(localFile(file)).size / 1024).toFixed(1);
