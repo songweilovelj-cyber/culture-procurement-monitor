@@ -1,0 +1,11 @@
+{
+  "name": "fund-investment-ai-agent",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check src/scoring.js && node --check src/macroModel.js && node --check public/app.js",
+    "collect:funds": "node collectors/collect-eastmoney-funds.js"
+  }
+}
