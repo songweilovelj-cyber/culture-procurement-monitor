@@ -1,0 +1,5232 @@
+[
+  {
+    "id": "semiconductor",
+    "name": "半导体芯片指数基金",
+    "category": "主题指数",
+    "role": "卫星仓",
+    "riskLevel": "高",
+    "matchedFundCount": 159,
+    "funds": [
+      {
+        "name": "国联安中证半导体ETF联接A",
+        "code": "007300",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 78,
+        "aumScore": 76,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "国联安中证半导体ETF联接C",
+        "code": "007301",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 79,
+        "aumScore": 77,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "国泰CES半导体芯片行业ETF联接A",
+        "code": "008281",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 80,
+        "aumScore": 78,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "国泰CES半导体芯片行业ETF联接C",
+        "code": "008282",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 81,
+        "aumScore": 79,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏国证半导体芯片ETF联接A",
+        "code": "008887",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 82,
+        "aumScore": 80,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏国证半导体芯片ETF联接C",
+        "code": "008888",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 83,
+        "aumScore": 81,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘芯片产业ETF联接A",
+        "code": "012552",
+        "fee": 0.5,
+        "trackingError": 0.24,
+        "liquidity": 84,
+        "aumScore": 82,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘芯片产业ETF联接C",
+        "code": "012553",
+        "fee": 0.5,
+        "trackingError": 0.25,
+        "liquidity": 85,
+        "aumScore": 83,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发国证半导体芯片ETF联接A",
+        "code": "012629",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 86,
+        "aumScore": 84,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发国证半导体芯片ETF联接C",
+        "code": "012630",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 87,
+        "aumScore": 85,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华安CES半导体芯片行业指数发起A",
+        "code": "012837",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 65,
+        "aumScore": 72,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华安CES半导体芯片行业指数发起C",
+        "code": "012838",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 66,
+        "aumScore": 73,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "鹏华国证半导体芯片ETF联接A",
+        "code": "012969",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 90,
+        "aumScore": 88,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "鹏华国证半导体芯片ETF联接C",
+        "code": "012970",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 91,
+        "aumScore": 89,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "东财芯片A",
+        "code": "013445",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 69,
+        "aumScore": 76,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "东财芯片C",
+        "code": "013446",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 70,
+        "aumScore": 77,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "汇添富中证芯片产业指数增强发起式A",
+        "code": "014193",
+        "fee": 0.8,
+        "trackingError": 0.3,
+        "liquidity": 55,
+        "aumScore": 78,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "汇添富中证芯片产业指数增强发起式C",
+        "code": "014194",
+        "fee": 0.8,
+        "trackingError": 0.31,
+        "liquidity": 56,
+        "aumScore": 79,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "西部利得CES芯片指数增强A",
+        "code": "014418",
+        "fee": 0.8,
+        "trackingError": 0.33,
+        "liquidity": 57,
+        "aumScore": 62,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "西部利得CES芯片指数增强C",
+        "code": "014419",
+        "fee": 0.8,
+        "trackingError": 0.34,
+        "liquidity": 58,
+        "aumScore": 63,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "富国中证芯片产业ETF发起式联接A",
+        "code": "014776",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 81,
+        "aumScore": 80,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "富国中证芯片产业ETF发起式联接C",
+        "code": "014777",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 82,
+        "aumScore": 81,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "嘉实中证半导体指数增强发起式A",
+        "code": "014854",
+        "fee": 0.8,
+        "trackingError": 0.31,
+        "liquidity": 61,
+        "aumScore": 66,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "嘉实中证半导体指数增强发起式C",
+        "code": "014855",
+        "fee": 0.8,
+        "trackingError": 0.33,
+        "liquidity": 62,
+        "aumScore": 67,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "嘉实中证芯片产业指数发起式A",
+        "code": "015336",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 63,
+        "aumScore": 68,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "嘉实中证芯片产业指数发起式C",
+        "code": "015337",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 64,
+        "aumScore": 69,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "嘉实上证科创板芯片ETF发起联接A",
+        "code": "017469",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 87,
+        "aumScore": 86,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "嘉实上证科创板芯片ETF发起联接C",
+        "code": "017470",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 88,
+        "aumScore": 87,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华安上证科创板芯片ETF发起式联接A",
+        "code": "017559",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 89,
+        "aumScore": 88,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华安上证科创板芯片ETF发起式联接C",
+        "code": "017560",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 90,
+        "aumScore": 89,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      }
+    ],
+    "scores": {
+      "indexQuality": 78,
+      "longTermThesis": 87,
+      "valuationComfort": 52,
+      "crowding": 74,
+      "policySupport": 80,
+      "macroSensitivity": 82,
+      "volatilityRisk": 88,
+      "executionQuality": 76,
+      "costEfficiency": 70,
+      "portfolioFit": 58
+    },
+    "thesis": {
+      "bull": [
+        "AI 算力、国产替代和高端制造升级共同支撑长期需求。",
+        "设备、材料、设计、制造链条具备政策和产业资本关注度。"
+      ],
+      "bear": [
+        "半导体强周期属性明显，库存和资本开支回落会放大回撤。",
+        "估值容易提前透支长期叙事，热门阶段不适合一次性重仓。"
+      ],
+      "triggers": [
+        "若指数估值分位回落到历史中位以下，可提高建仓速度。",
+        "若宏观转向紧缩，主题仓位上限应下调。"
+      ]
+    },
+    "holdingsOverlap": [
+      {
+        "name": "创业板",
+        "overlap": 65
+      },
+      {
+        "name": "人工智能",
+        "overlap": 60
+      },
+      {
+        "name": "红利低波",
+        "overlap": 35
+      }
+    ]
+  },
+  {
+    "id": "ai",
+    "name": "人工智能指数基金",
+    "category": "主题指数",
+    "role": "卫星仓",
+    "riskLevel": "高",
+    "matchedFundCount": 200,
+    "funds": [
+      {
+        "name": "华富中证人工智能产业ETF联接A",
+        "code": "008020",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 78,
+        "aumScore": 76,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华富中证人工智能产业ETF联接C",
+        "code": "008021",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 79,
+        "aumScore": 77,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏人工智能ETF联接A",
+        "code": "008585",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 80,
+        "aumScore": 78,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏人工智能ETF联接C",
+        "code": "008586",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 81,
+        "aumScore": 79,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "融通人工智能指数(LOF)C",
+        "code": "009239",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 59,
+        "aumScore": 66,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证智能汽车指数发起式A",
+        "code": "010955",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 60,
+        "aumScore": 67,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证智能汽车指数发起式C",
+        "code": "010956",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 61,
+        "aumScore": 68,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "西部利得人工智能主题指数增强A",
+        "code": "011832",
+        "fee": 0.8,
+        "trackingError": 0.31,
+        "liquidity": 62,
+        "aumScore": 69,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "西部利得人工智能主题指数增强C",
+        "code": "011833",
+        "fee": 0.8,
+        "trackingError": 0.33,
+        "liquidity": 63,
+        "aumScore": 70,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证人工智能主题ETF发起联接A",
+        "code": "011839",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 87,
+        "aumScore": 85,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证人工智能主题ETF发起联接C",
+        "code": "011840",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 88,
+        "aumScore": 86,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达中证人工智能主题ETF联接A",
+        "code": "012733",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 89,
+        "aumScore": 87,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达中证人工智能主题ETF联接C",
+        "code": "012734",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 90,
+        "aumScore": 88,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "中信保诚中证智能家居指数(LOF)C",
+        "code": "013084",
+        "fee": 0.65,
+        "trackingError": 0.33,
+        "liquidity": 68,
+        "aumScore": 75,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "富国中证智能汽车(LOF)C",
+        "code": "013292",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 69,
+        "aumScore": 76,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华宝中证智能电动汽车ETF发起式联接A",
+        "code": "013475",
+        "fee": 0.5,
+        "trackingError": 0.25,
+        "liquidity": 93,
+        "aumScore": 91,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华宝中证智能电动汽车ETF发起式联接C",
+        "code": "013476",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 94,
+        "aumScore": 76,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证机器人ETF发起联接A",
+        "code": "014880",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 78,
+        "aumScore": 77,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证机器人ETF发起联接C",
+        "code": "014881",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 79,
+        "aumScore": 78,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "博时中证机器人指数发起式A",
+        "code": "018094",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 58,
+        "aumScore": 63,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "博时中证机器人指数发起式C",
+        "code": "018095",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 59,
+        "aumScore": 64,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏中证机器人ETF发起式联接A",
+        "code": "018344",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 82,
+        "aumScore": 81,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏中证机器人ETF发起式联接C",
+        "code": "018345",
+        "fee": 0.5,
+        "trackingError": 0.24,
+        "liquidity": 83,
+        "aumScore": 82,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "中欧中证机器人指数发起A",
+        "code": "020255",
+        "fee": 0.65,
+        "trackingError": 0.33,
+        "liquidity": 62,
+        "aumScore": 67,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "中欧中证机器人指数发起C",
+        "code": "020256",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 63,
+        "aumScore": 68,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "国泰中证机器人ETF发起联接A",
+        "code": "020289",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 86,
+        "aumScore": 85,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "国泰中证机器人ETF发起联接C",
+        "code": "020290",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 87,
+        "aumScore": 86,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "招商中证机器人ETF发起联接A",
+        "code": "020481",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 88,
+        "aumScore": 87,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "招商中证机器人ETF发起联接C",
+        "code": "020482",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 89,
+        "aumScore": 88,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方中证机器人ETF发起联接A",
+        "code": "020607",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 90,
+        "aumScore": 89,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      }
+    ],
+    "scores": {
+      "indexQuality": 74,
+      "longTermThesis": 91,
+      "valuationComfort": 46,
+      "crowding": 82,
+      "policySupport": 76,
+      "macroSensitivity": 88,
+      "volatilityRisk": 91,
+      "executionQuality": 72,
+      "costEfficiency": 68,
+      "portfolioFit": 52
+    },
+    "thesis": {
+      "bull": [
+        "AI 应用、算力基础设施和企业智能化仍处于长周期渗透阶段。",
+        "长期空间大，但不同指数对软件、硬件、算力的暴露差异很大。"
+      ],
+      "bear": [
+        "叙事强导致估值容易拥挤，短期可能出现大幅波动。",
+        "主题名称相似但成分差异大，需要看指数纯度。"
+      ],
+      "triggers": [
+        "若估值回撤但产业数据仍强，可恢复分批。",
+        "若主题资金持续净流入且估值继续抬升，应降低追买。"
+      ]
+    },
+    "holdingsOverlap": [
+      {
+        "name": "半导体芯片",
+        "overlap": 60
+      },
+      {
+        "name": "创业板",
+        "overlap": 54
+      },
+      {
+        "name": "沪深300",
+        "overlap": 24
+      }
+    ]
+  },
+  {
+    "id": "csi300",
+    "name": "沪深300指数基金",
+    "category": "宽基指数",
+    "role": "核心仓",
+    "riskLevel": "中",
+    "matchedFundCount": 364,
+    "funds": [
+      {
+        "name": "华夏沪深300ETF联接A",
+        "code": "000051",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 78,
+        "aumScore": 76,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "富国沪深300指数增强A(后端)",
+        "code": "000154",
+        "fee": 0.8,
+        "trackingError": 0.3,
+        "liquidity": 56,
+        "aumScore": 63,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "嘉实沪深300指数研究增强A",
+        "code": "000176",
+        "fee": 0.8,
+        "trackingError": 0.31,
+        "liquidity": 57,
+        "aumScore": 64,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "景顺长城沪深300指数增强A",
+        "code": "000311",
+        "fee": 0.8,
+        "trackingError": 0.33,
+        "liquidity": 58,
+        "aumScore": 65,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华安沪深300增强A",
+        "code": "000312",
+        "fee": 0.8,
+        "trackingError": 0.34,
+        "liquidity": 59,
+        "aumScore": 66,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华安沪深300增强C",
+        "code": "000313",
+        "fee": 0.8,
+        "trackingError": 0.28,
+        "liquidity": 60,
+        "aumScore": 67,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "汇添富沪深300安中指数A",
+        "code": "000368",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 61,
+        "aumScore": 68,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "国泰沪深300指数增强A",
+        "code": "000512",
+        "fee": 0.8,
+        "trackingError": 0.31,
+        "liquidity": 62,
+        "aumScore": 69,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "国寿安保沪深300ETF联接A",
+        "code": "000613",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 86,
+        "aumScore": 84,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "前海开源沪深300指数A",
+        "code": "000656",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 64,
+        "aumScore": 71,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘沪深300ETF联接A",
+        "code": "000961",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 88,
+        "aumScore": 86,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏沪深300指数增强A",
+        "code": "001015",
+        "fee": 0.8,
+        "trackingError": 0.3,
+        "liquidity": 66,
+        "aumScore": 73,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏沪深300指数增强C",
+        "code": "001016",
+        "fee": 0.8,
+        "trackingError": 0.31,
+        "liquidity": 67,
+        "aumScore": 74,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华泰柏瑞沪深300指数增强A",
+        "code": "001074",
+        "fee": 0.8,
+        "trackingError": 0.33,
+        "liquidity": 68,
+        "aumScore": 75,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "国泰沪深300指数增强C",
+        "code": "002063",
+        "fee": 0.8,
+        "trackingError": 0.34,
+        "liquidity": 69,
+        "aumScore": 76,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "创金合信沪深300指数增强A",
+        "code": "002310",
+        "fee": 0.8,
+        "trackingError": 0.28,
+        "liquidity": 70,
+        "aumScore": 77,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "创金合信沪深300指数增强C",
+        "code": "002315",
+        "fee": 0.8,
+        "trackingError": 0.3,
+        "liquidity": 55,
+        "aumScore": 78,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "博时沪深300指数C",
+        "code": "002385",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 56,
+        "aumScore": 79,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "万家沪深300指数增强A",
+        "code": "002670",
+        "fee": 0.8,
+        "trackingError": 0.33,
+        "liquidity": 57,
+        "aumScore": 62,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "万家沪深300指数增强C",
+        "code": "002671",
+        "fee": 0.8,
+        "trackingError": 0.34,
+        "liquidity": 58,
+        "aumScore": 63,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发沪深300ETF联接C",
+        "code": "002987",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 81,
+        "aumScore": 80,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "中金沪深300指数增强A",
+        "code": "003015",
+        "fee": 0.8,
+        "trackingError": 0.3,
+        "liquidity": 60,
+        "aumScore": 65,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "宏利沪深300指数增强C",
+        "code": "003548",
+        "fee": 0.8,
+        "trackingError": 0.31,
+        "liquidity": 61,
+        "aumScore": 66,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "中金沪深300指数增强C",
+        "code": "003579",
+        "fee": 0.8,
+        "trackingError": 0.33,
+        "liquidity": 62,
+        "aumScore": 67,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华宝沪深300增强策略ETF发起式联接A",
+        "code": "003876",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 85,
+        "aumScore": 84,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "汇安沪深300指数增强A",
+        "code": "003884",
+        "fee": 0.8,
+        "trackingError": 0.28,
+        "liquidity": 64,
+        "aumScore": 69,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "汇安沪深300指数增强C",
+        "code": "003885",
+        "fee": 0.8,
+        "trackingError": 0.3,
+        "liquidity": 65,
+        "aumScore": 70,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "安信量化沪深300增强A",
+        "code": "003957",
+        "fee": 0.8,
+        "trackingError": 0.31,
+        "liquidity": 66,
+        "aumScore": 71,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "安信量化沪深300增强C",
+        "code": "003958",
+        "fee": 0.8,
+        "trackingError": 0.33,
+        "liquidity": 67,
+        "aumScore": 72,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "招商沪深300指数增强A",
+        "code": "004190",
+        "fee": 0.8,
+        "trackingError": 0.34,
+        "liquidity": 68,
+        "aumScore": 73,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      }
+    ],
+    "scores": {
+      "indexQuality": 92,
+      "longTermThesis": 88,
+      "valuationComfort": 68,
+      "crowding": 52,
+      "policySupport": 62,
+      "macroSensitivity": 55,
+      "volatilityRisk": 58,
+      "executionQuality": 92,
+      "costEfficiency": 94,
+      "portfolioFit": 86
+    },
+    "thesis": {
+      "bull": [
+        "宽基分散度高，适合普通投资者做核心底仓。",
+        "费用和流动性通常优于主题基金。"
+      ],
+      "bear": [
+        "上行弹性弱于高波动主题。",
+        "若宏观基本面偏弱，宽基也会阶段性承压。"
+      ],
+      "triggers": [
+        "若用户缺少核心仓，应优先配置宽基。",
+        "若主题仓过高，应通过宽基降低组合波动。"
+      ]
+    },
+    "holdingsOverlap": [
+      {
+        "name": "中证1000",
+        "overlap": 29
+      },
+      {
+        "name": "创业板",
+        "overlap": 29
+      },
+      {
+        "name": "中证500",
+        "overlap": 28
+      }
+    ]
+  },
+  {
+    "id": "csi500",
+    "name": "中证500指数基金",
+    "category": "宽基指数",
+    "role": "核心/进攻仓",
+    "riskLevel": "中高",
+    "matchedFundCount": 273,
+    "funds": [
+      {
+        "name": "嘉实中证500ETF联接A",
+        "code": "000008",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 78,
+        "aumScore": 76,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "建信中证500指数增强A",
+        "code": "000478",
+        "fee": 0.8,
+        "trackingError": 0.3,
+        "liquidity": 56,
+        "aumScore": 63,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证500ETF联接A",
+        "code": "000962",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 80,
+        "aumScore": 78,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "汇添富中证500指数增强A",
+        "code": "001050",
+        "fee": 0.8,
+        "trackingError": 0.33,
+        "liquidity": 58,
+        "aumScore": 65,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏中证500ETF联接A",
+        "code": "001052",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 82,
+        "aumScore": 80,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华泰柏瑞中证500ETF联接A",
+        "code": "001214",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 83,
+        "aumScore": 81,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "国寿安保中证500ETF联接",
+        "code": "001241",
+        "fee": 0.5,
+        "trackingError": 0.24,
+        "liquidity": 84,
+        "aumScore": 82,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "诺安中证500指数增强A",
+        "code": "001351",
+        "fee": 0.8,
+        "trackingError": 0.31,
+        "liquidity": 62,
+        "aumScore": 69,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "景顺长城中证500ETF联接",
+        "code": "001455",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 86,
+        "aumScore": 84,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证500指数增强A",
+        "code": "001556",
+        "fee": 0.8,
+        "trackingError": 0.34,
+        "liquidity": 64,
+        "aumScore": 71,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证500指数增强C",
+        "code": "001557",
+        "fee": 0.8,
+        "trackingError": 0.28,
+        "liquidity": 65,
+        "aumScore": 72,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "浙商中证500增强A",
+        "code": "002076",
+        "fee": 0.8,
+        "trackingError": 0.3,
+        "liquidity": 66,
+        "aumScore": 73,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "创金合信中证500指数增强A",
+        "code": "002311",
+        "fee": 0.8,
+        "trackingError": 0.31,
+        "liquidity": 67,
+        "aumScore": 74,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "创金合信中证500指数增强C",
+        "code": "002316",
+        "fee": 0.8,
+        "trackingError": 0.33,
+        "liquidity": 68,
+        "aumScore": 75,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "申万菱信中证500指数增强A",
+        "code": "002510",
+        "fee": 0.8,
+        "trackingError": 0.34,
+        "liquidity": 69,
+        "aumScore": 76,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方中证500信息技术联接A",
+        "code": "002900",
+        "fee": 0.6,
+        "trackingError": 0.27,
+        "liquidity": 68,
+        "aumScore": 77,
+        "fit": "场外联接",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发中证500ETF联接C",
+        "code": "002903",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 94,
+        "aumScore": 76,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方中证500量化增强A",
+        "code": "002906",
+        "fee": 0.8,
+        "trackingError": 0.31,
+        "liquidity": 56,
+        "aumScore": 79,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方中证500量化增强C",
+        "code": "002907",
+        "fee": 0.8,
+        "trackingError": 0.33,
+        "liquidity": 57,
+        "aumScore": 62,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "中金中证500指数增强A",
+        "code": "003016",
+        "fee": 0.8,
+        "trackingError": 0.34,
+        "liquidity": 58,
+        "aumScore": 63,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "景顺长城中证500行业中性低波动指数A",
+        "code": "003318",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 59,
+        "aumScore": 64,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "中金中证500指数增强C",
+        "code": "003578",
+        "fee": 0.8,
+        "trackingError": 0.3,
+        "liquidity": 60,
+        "aumScore": 65,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "国泰中证500指数增强A",
+        "code": "003760",
+        "fee": 0.8,
+        "trackingError": 0.31,
+        "liquidity": 61,
+        "aumScore": 66,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "国泰中证500指数增强C",
+        "code": "003761",
+        "fee": 0.8,
+        "trackingError": 0.33,
+        "liquidity": 62,
+        "aumScore": 67,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "申万菱信中证500指数优选增强A",
+        "code": "003986",
+        "fee": 0.8,
+        "trackingError": 0.34,
+        "liquidity": 63,
+        "aumScore": 68,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "招商中证500指数增强A",
+        "code": "004192",
+        "fee": 0.8,
+        "trackingError": 0.28,
+        "liquidity": 64,
+        "aumScore": 69,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "招商中证500指数增强C",
+        "code": "004193",
+        "fee": 0.8,
+        "trackingError": 0.3,
+        "liquidity": 65,
+        "aumScore": 70,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方中证500信息技术联接C",
+        "code": "004347",
+        "fee": 0.6,
+        "trackingError": 0.27,
+        "liquidity": 68,
+        "aumScore": 71,
+        "fit": "场外联接",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方中证500ETF联接(LOF)C",
+        "code": "004348",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 89,
+        "aumScore": 88,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "长信中证500指数增强A",
+        "code": "004945",
+        "fee": 0.8,
+        "trackingError": 0.34,
+        "liquidity": 68,
+        "aumScore": 73,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      }
+    ],
+    "scores": {
+      "indexQuality": 86,
+      "longTermThesis": 82,
+      "valuationComfort": 62,
+      "crowding": 58,
+      "policySupport": 58,
+      "macroSensitivity": 62,
+      "volatilityRisk": 66,
+      "executionQuality": 86,
+      "costEfficiency": 88,
+      "portfolioFit": 78
+    },
+    "thesis": {
+      "bull": [
+        "中证500覆盖中盘成长与制造业公司，弹性高于沪深300。",
+        "适合已有大盘核心仓后做中盘补充。"
+      ],
+      "bear": [
+        "波动和回撤通常高于沪深300。",
+        "经济下行时中盘盈利更容易承压。"
+      ],
+      "triggers": [
+        "若经济复苏信号增强，可提高中盘暴露。",
+        "若信用收缩，应降低中盘新增仓位。"
+      ]
+    },
+    "holdingsOverlap": [
+      {
+        "name": "沪深300",
+        "overlap": 28
+      },
+      {
+        "name": "红利低波",
+        "overlap": 28
+      },
+      {
+        "name": "半导体芯片",
+        "overlap": 18
+      }
+    ]
+  },
+  {
+    "id": "csi1000",
+    "name": "中证1000指数基金",
+    "category": "宽基指数",
+    "role": "卫星仓",
+    "riskLevel": "高",
+    "matchedFundCount": 114,
+    "funds": [
+      {
+        "name": "创金合信中证1000指数增强A",
+        "code": "003646",
+        "fee": 0.8,
+        "trackingError": 0.28,
+        "liquidity": 55,
+        "aumScore": 62,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "创金合信中证1000指数增强C",
+        "code": "003647",
+        "fee": 0.8,
+        "trackingError": 0.3,
+        "liquidity": 56,
+        "aumScore": 63,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "招商中证1000指数增强A",
+        "code": "004194",
+        "fee": 0.8,
+        "trackingError": 0.31,
+        "liquidity": 57,
+        "aumScore": 64,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "招商中证1000指数增强C",
+        "code": "004195",
+        "fee": 0.8,
+        "trackingError": 0.33,
+        "liquidity": 58,
+        "aumScore": 65,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "万家中证1000指数增强A",
+        "code": "005313",
+        "fee": 0.8,
+        "trackingError": 0.34,
+        "liquidity": 59,
+        "aumScore": 66,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "万家中证1000指数增强C",
+        "code": "005314",
+        "fee": 0.8,
+        "trackingError": 0.28,
+        "liquidity": 60,
+        "aumScore": 67,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "建信中证1000指数增强A",
+        "code": "006165",
+        "fee": 0.8,
+        "trackingError": 0.3,
+        "liquidity": 61,
+        "aumScore": 68,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "建信中证1000指数增强C",
+        "code": "006166",
+        "fee": 0.8,
+        "trackingError": 0.31,
+        "liquidity": 62,
+        "aumScore": 69,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发中证1000ETF联接A",
+        "code": "006486",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 86,
+        "aumScore": 84,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发中证1000ETF联接C",
+        "code": "006487",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 87,
+        "aumScore": 85,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方中证1000ETF发起联接A",
+        "code": "011860",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 88,
+        "aumScore": 86,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方中证1000ETF发起联接C",
+        "code": "011861",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 89,
+        "aumScore": 87,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "富国中证1000指数增强(LOF)C",
+        "code": "013331",
+        "fee": 0.8,
+        "trackingError": 0.31,
+        "liquidity": 67,
+        "aumScore": 74,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "建信中证1000指数增强E",
+        "code": "013442",
+        "fee": 0.8,
+        "trackingError": 0.33,
+        "liquidity": 68,
+        "aumScore": 75,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏中证1000ETF发起式联接A",
+        "code": "013922",
+        "fee": 0.5,
+        "trackingError": 0.24,
+        "liquidity": 92,
+        "aumScore": 90,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏中证1000ETF发起式联接C",
+        "code": "013923",
+        "fee": 0.5,
+        "trackingError": 0.25,
+        "liquidity": 93,
+        "aumScore": 91,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏中证1000指数增强A",
+        "code": "014125",
+        "fee": 0.8,
+        "trackingError": 0.3,
+        "liquidity": 55,
+        "aumScore": 78,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏中证1000指数增强C",
+        "code": "014126",
+        "fee": 0.8,
+        "trackingError": 0.31,
+        "liquidity": 56,
+        "aumScore": 79,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证1000指数增强A",
+        "code": "014201",
+        "fee": 0.8,
+        "trackingError": 0.33,
+        "liquidity": 57,
+        "aumScore": 62,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证1000指数增强C",
+        "code": "014202",
+        "fee": 0.8,
+        "trackingError": 0.34,
+        "liquidity": 58,
+        "aumScore": 63,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "兴银中证1000指数增强A",
+        "code": "014831",
+        "fee": 0.8,
+        "trackingError": 0.28,
+        "liquidity": 59,
+        "aumScore": 64,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "兴银中证1000指数增强C",
+        "code": "014832",
+        "fee": 0.8,
+        "trackingError": 0.3,
+        "liquidity": 60,
+        "aumScore": 65,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华安中证1000指数增强A",
+        "code": "015148",
+        "fee": 0.8,
+        "trackingError": 0.31,
+        "liquidity": 61,
+        "aumScore": 66,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华安中证1000指数增强C",
+        "code": "015149",
+        "fee": 0.8,
+        "trackingError": 0.33,
+        "liquidity": 62,
+        "aumScore": 67,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "太平中证1000指数增强A",
+        "code": "015466",
+        "fee": 0.8,
+        "trackingError": 0.34,
+        "liquidity": 63,
+        "aumScore": 68,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "太平中证1000指数增强C",
+        "code": "015467",
+        "fee": 0.8,
+        "trackingError": 0.28,
+        "liquidity": 64,
+        "aumScore": 69,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "景顺长城中证1000指数增强A",
+        "code": "015495",
+        "fee": 0.8,
+        "trackingError": 0.3,
+        "liquidity": 65,
+        "aumScore": 70,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "景顺长城中证1000指数增强C",
+        "code": "015496",
+        "fee": 0.8,
+        "trackingError": 0.31,
+        "liquidity": 66,
+        "aumScore": 71,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "中信建投中证1000指数增强A",
+        "code": "015784",
+        "fee": 0.8,
+        "trackingError": 0.33,
+        "liquidity": 67,
+        "aumScore": 72,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "中信建投中证1000指数增强C",
+        "code": "015785",
+        "fee": 0.8,
+        "trackingError": 0.34,
+        "liquidity": 68,
+        "aumScore": 73,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      }
+    ],
+    "scores": {
+      "indexQuality": 80,
+      "longTermThesis": 80,
+      "valuationComfort": 56,
+      "crowding": 62,
+      "policySupport": 54,
+      "macroSensitivity": 68,
+      "volatilityRisk": 76,
+      "executionQuality": 80,
+      "costEfficiency": 84,
+      "portfolioFit": 66
+    },
+    "thesis": {
+      "bull": [
+        "小盘宽基具备高弹性，适合风险承受较高的长期投资者。"
+      ],
+      "bear": [
+        "小盘股波动和流动性风险更高，不适合做普通人的核心底仓。"
+      ],
+      "triggers": [
+        "若风险偏好回升且估值合理，可分批。",
+        "若市场转向避险，应下调仓位上限。"
+      ]
+    },
+    "holdingsOverlap": [
+      {
+        "name": "沪深300",
+        "overlap": 29
+      },
+      {
+        "name": "红利低波",
+        "overlap": 29
+      },
+      {
+        "name": "半导体芯片",
+        "overlap": 18
+      }
+    ]
+  },
+  {
+    "id": "dividend_low_vol",
+    "name": "红利低波指数基金",
+    "category": "策略指数",
+    "role": "核心/防守仓",
+    "riskLevel": "中低",
+    "matchedFundCount": 358,
+    "funds": [
+      {
+        "name": "景顺长城中证500行业中性低波动指数A",
+        "code": "003318",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 55,
+        "aumScore": 62,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "民生加银港股通高股息A",
+        "code": "004532",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 56,
+        "aumScore": 63,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "民生加银港股通高股息C",
+        "code": "004533",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 57,
+        "aumScore": 64,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "摩根标普港股通低波红利指数A",
+        "code": "005051",
+        "fee": 0.65,
+        "trackingError": 0.33,
+        "liquidity": 58,
+        "aumScore": 65,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "摩根标普港股通低波红利指数C",
+        "code": "005052",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 59,
+        "aumScore": 66,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华宝标普中国A股红利机会ETF联接C",
+        "code": "005125",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 83,
+        "aumScore": 81,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "创金合信中证红利低波动指数A",
+        "code": "005561",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 61,
+        "aumScore": 68,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "创金合信中证红利低波动指数C",
+        "code": "005562",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 62,
+        "aumScore": 69,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "工银深证红利ETF联接C",
+        "code": "006724",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 86,
+        "aumScore": 84,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "浙商中华预期高股息A",
+        "code": "007178",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 64,
+        "aumScore": 71,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "浙商中华预期高股息C",
+        "code": "007216",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 65,
+        "aumScore": 72,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华泰柏瑞中证红利低波ETF联接A",
+        "code": "007466",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 89,
+        "aumScore": 87,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华泰柏瑞中证红利低波ETF联接C",
+        "code": "007467",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 90,
+        "aumScore": 88,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "嘉实沪深300红利低波动ETF联接A",
+        "code": "007605",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 91,
+        "aumScore": 89,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "嘉实沪深300红利低波动ETF联接C",
+        "code": "007606",
+        "fee": 0.5,
+        "trackingError": 0.24,
+        "liquidity": 92,
+        "aumScore": 90,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "建信中证红利潜力指数A",
+        "code": "007671",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 70,
+        "aumScore": 77,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "建信中证红利潜力指数C",
+        "code": "007672",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 55,
+        "aumScore": 78,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "景顺长城沪港深红利成长低波指数A",
+        "code": "007751",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 56,
+        "aumScore": 79,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "景顺长城沪港深红利成长低波指数C",
+        "code": "007760",
+        "fee": 0.65,
+        "trackingError": 0.33,
+        "liquidity": 57,
+        "aumScore": 62,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "大成中证红利指数C",
+        "code": "007801",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 58,
+        "aumScore": 63,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证红利低波动100联接A",
+        "code": "008114",
+        "fee": 0.6,
+        "trackingError": 0.26,
+        "liquidity": 73,
+        "aumScore": 64,
+        "fit": "场外联接",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证红利低波动100联接C",
+        "code": "008115",
+        "fee": 0.6,
+        "trackingError": 0.27,
+        "liquidity": 74,
+        "aumScore": 65,
+        "fit": "场外联接",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方标普红利低波50ETF联接A",
+        "code": "008163",
+        "fee": 0.5,
+        "trackingError": 0.24,
+        "liquidity": 83,
+        "aumScore": 82,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方标普红利低波50ETF联接C",
+        "code": "008164",
+        "fee": 0.5,
+        "trackingError": 0.25,
+        "liquidity": 84,
+        "aumScore": 83,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "富国中证红利指数增强C",
+        "code": "008682",
+        "fee": 0.8,
+        "trackingError": 0.34,
+        "liquidity": 63,
+        "aumScore": 68,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "宏利消费红利指数A",
+        "code": "008928",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 64,
+        "aumScore": 69,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "宏利消费红利指数C",
+        "code": "008929",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 65,
+        "aumScore": 70,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达中证红利ETF联接发起式A",
+        "code": "009051",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 88,
+        "aumScore": 87,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达中证红利ETF联接发起式C",
+        "code": "009052",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 89,
+        "aumScore": 88,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "西部利得国企红利指数增强C",
+        "code": "009439",
+        "fee": 0.8,
+        "trackingError": 0.34,
+        "liquidity": 68,
+        "aumScore": 73,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      }
+    ],
+    "scores": {
+      "indexQuality": 84,
+      "longTermThesis": 82,
+      "valuationComfort": 74,
+      "crowding": 48,
+      "policySupport": 56,
+      "macroSensitivity": 46,
+      "volatilityRisk": 42,
+      "executionQuality": 86,
+      "costEfficiency": 90,
+      "portfolioFit": 82
+    },
+    "thesis": {
+      "bull": [
+        "现金流和股息特征更稳定，适合普通投资者降低组合波动。",
+        "高利率或风险偏好下降时，防守属性更明显。"
+      ],
+      "bear": [
+        "风格轮动到成长时可能明显跑输。",
+        "高股息不等于无风险，仍会受到盈利和估值影响。"
+      ],
+      "triggers": [
+        "若组合主题仓偏高，可提高红利低波比例。",
+        "若利率快速下行且成长估值合理，可降低防守仓增量。"
+      ]
+    },
+    "holdingsOverlap": [
+      {
+        "name": "半导体芯片",
+        "overlap": 35
+      },
+      {
+        "name": "中证1000",
+        "overlap": 29
+      },
+      {
+        "name": "创业板",
+        "overlap": 29
+      }
+    ]
+  },
+  {
+    "id": "chinext",
+    "name": "创业板指数基金",
+    "category": "宽基/成长指数",
+    "role": "卫星仓",
+    "riskLevel": "高",
+    "matchedFundCount": 364,
+    "funds": [
+      {
+        "name": "天弘创业板ETF联接A",
+        "code": "001592",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 78,
+        "aumScore": 76,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘创业板ETF联接C",
+        "code": "001593",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 79,
+        "aumScore": 77,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "长城创业板指数增强A",
+        "code": "001879",
+        "fee": 0.8,
+        "trackingError": 0.31,
+        "liquidity": 57,
+        "aumScore": 64,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方创业板ETF联接A",
+        "code": "002656",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 81,
+        "aumScore": 79,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发创业板ETF发起式联接A",
+        "code": "003765",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 82,
+        "aumScore": 80,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发创业板ETF发起式联接C",
+        "code": "003766",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 83,
+        "aumScore": 81,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方创业板ETF联接C",
+        "code": "004343",
+        "fee": 0.5,
+        "trackingError": 0.24,
+        "liquidity": 84,
+        "aumScore": 82,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达创业板ETF联接C",
+        "code": "004744",
+        "fee": 0.5,
+        "trackingError": 0.25,
+        "liquidity": 85,
+        "aumScore": 83,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "融通创业板指数C",
+        "code": "004870",
+        "fee": 0.65,
+        "trackingError": 0.33,
+        "liquidity": 63,
+        "aumScore": 70,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "海富通创业板增强C",
+        "code": "005287",
+        "fee": 0.8,
+        "trackingError": 0.34,
+        "liquidity": 64,
+        "aumScore": 71,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "海富通创业板增强A",
+        "code": "005288",
+        "fee": 0.8,
+        "trackingError": 0.28,
+        "liquidity": 65,
+        "aumScore": 72,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "工银创业板ETF联接A",
+        "code": "005390",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 89,
+        "aumScore": 87,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "工银创业板ETF联接C",
+        "code": "005391",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 90,
+        "aumScore": 88,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "建信创业板ETF发起联接A",
+        "code": "005873",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 91,
+        "aumScore": 89,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "建信创业板ETF发起联接C",
+        "code": "005874",
+        "fee": 0.5,
+        "trackingError": 0.24,
+        "liquidity": 92,
+        "aumScore": 90,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏创业板ETF联接A",
+        "code": "006248",
+        "fee": 0.5,
+        "trackingError": 0.25,
+        "liquidity": 93,
+        "aumScore": 91,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏创业板ETF联接C",
+        "code": "006249",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 94,
+        "aumScore": 76,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "博时创业板ETF联接C",
+        "code": "006733",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 78,
+        "aumScore": 77,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "长城创业板指数增强C",
+        "code": "006928",
+        "fee": 0.8,
+        "trackingError": 0.33,
+        "liquidity": 57,
+        "aumScore": 62,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "交银创业板50指数A",
+        "code": "007464",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 58,
+        "aumScore": 63,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "交银创业板50指数C",
+        "code": "007465",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 59,
+        "aumScore": 64,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏创业板价值ETF联接A",
+        "code": "007472",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 82,
+        "aumScore": 81,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏创业板价值ETF联接C",
+        "code": "007473",
+        "fee": 0.5,
+        "trackingError": 0.24,
+        "liquidity": 83,
+        "aumScore": 82,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏创业板成长ETF联接A",
+        "code": "007474",
+        "fee": 0.5,
+        "trackingError": 0.25,
+        "liquidity": 84,
+        "aumScore": 83,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏创业板成长ETF联接C",
+        "code": "007475",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 85,
+        "aumScore": 84,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "永赢创业板指数发起式A",
+        "code": "007664",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 64,
+        "aumScore": 69,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "永赢创业板指数发起式C",
+        "code": "007665",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 65,
+        "aumScore": 70,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "景顺长城创业板综指增强A",
+        "code": "008072",
+        "fee": 0.8,
+        "trackingError": 0.31,
+        "liquidity": 66,
+        "aumScore": 71,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "平安创业板ETF联接A",
+        "code": "009012",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 89,
+        "aumScore": 88,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "平安创业板ETF联接C",
+        "code": "009013",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 90,
+        "aumScore": 89,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      }
+    ],
+    "scores": {
+      "indexQuality": 80,
+      "longTermThesis": 84,
+      "valuationComfort": 54,
+      "crowding": 70,
+      "policySupport": 62,
+      "macroSensitivity": 82,
+      "volatilityRisk": 84,
+      "executionQuality": 84,
+      "costEfficiency": 86,
+      "portfolioFit": 62
+    },
+    "thesis": {
+      "bull": [
+        "创业板成长属性强，医药、新能源、科技权重较高。"
+      ],
+      "bear": [
+        "估值和利率敏感度较高，波动明显大于大盘宽基。"
+      ],
+      "triggers": [
+        "若利率环境宽松且估值回落，可恢复分批。",
+        "若主题仓过多，应控制新增。"
+      ]
+    },
+    "holdingsOverlap": [
+      {
+        "name": "半导体芯片",
+        "overlap": 65
+      },
+      {
+        "name": "人工智能",
+        "overlap": 54
+      },
+      {
+        "name": "沪深300",
+        "overlap": 29
+      }
+    ]
+  },
+  {
+    "id": "star50",
+    "name": "科创50指数基金",
+    "category": "科技宽基",
+    "role": "卫星仓",
+    "riskLevel": "高",
+    "matchedFundCount": 611,
+    "funds": [
+      {
+        "name": "易方达上证科创50联接A",
+        "code": "011608",
+        "fee": 0.6,
+        "trackingError": 0.24,
+        "liquidity": 65,
+        "aumScore": 62,
+        "fit": "场外联接",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达上证科创50联接C",
+        "code": "011609",
+        "fee": 0.6,
+        "trackingError": 0.25,
+        "liquidity": 66,
+        "aumScore": 63,
+        "fit": "场外联接",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华泰柏瑞上证科创板50成份ETF联接A",
+        "code": "011610",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 80,
+        "aumScore": 78,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华泰柏瑞上证科创板50成份ETF联接C",
+        "code": "011611",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 81,
+        "aumScore": 79,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏科创50ETF联接A",
+        "code": "011612",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 82,
+        "aumScore": 80,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏科创50ETF联接C",
+        "code": "011613",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 83,
+        "aumScore": 81,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "工银科创50ETF联接A",
+        "code": "011614",
+        "fee": 0.5,
+        "trackingError": 0.24,
+        "liquidity": 84,
+        "aumScore": 82,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "工银科创50ETF联接C",
+        "code": "011615",
+        "fee": 0.5,
+        "trackingError": 0.25,
+        "liquidity": 85,
+        "aumScore": 83,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证科创创业50ETF联接A",
+        "code": "012894",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 86,
+        "aumScore": 84,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证科创创业50ETF联接C",
+        "code": "012895",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 87,
+        "aumScore": 85,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "兴银中证科创创业50指数A",
+        "code": "012898",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 65,
+        "aumScore": 72,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "兴银中证科创创业50指数C",
+        "code": "012899",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 66,
+        "aumScore": 73,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "鹏扬中证科创创业50ETF联接A",
+        "code": "012907",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 90,
+        "aumScore": 88,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "鹏扬中证科创创业50ETF联接C",
+        "code": "012908",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 91,
+        "aumScore": 89,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方中证科创创业50ETF联接A",
+        "code": "013298",
+        "fee": 0.5,
+        "trackingError": 0.24,
+        "liquidity": 92,
+        "aumScore": 90,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方中证科创创业50ETF联接C",
+        "code": "013299",
+        "fee": 0.5,
+        "trackingError": 0.25,
+        "liquidity": 93,
+        "aumScore": 91,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "招商中证科创创业50ETF联接A",
+        "code": "013302",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 94,
+        "aumScore": 76,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "招商中证科创创业50ETF联接C",
+        "code": "013303",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 78,
+        "aumScore": 77,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达中证科创创业50联接A",
+        "code": "013304",
+        "fee": 0.6,
+        "trackingError": 0.24,
+        "liquidity": 71,
+        "aumScore": 62,
+        "fit": "场外联接",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达中证科创创业50联接C",
+        "code": "013305",
+        "fee": 0.6,
+        "trackingError": 0.25,
+        "liquidity": 72,
+        "aumScore": 63,
+        "fit": "场外联接",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏科创创业50ETF联接A",
+        "code": "013310",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 81,
+        "aumScore": 80,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏科创创业50ETF联接C",
+        "code": "013311",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 82,
+        "aumScore": 81,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "富国中证科创创业50ETF联接A",
+        "code": "013313",
+        "fee": 0.5,
+        "trackingError": 0.24,
+        "liquidity": 83,
+        "aumScore": 82,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "富国中证科创创业50ETF联接C",
+        "code": "013314",
+        "fee": 0.5,
+        "trackingError": 0.25,
+        "liquidity": 84,
+        "aumScore": 83,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "嘉实中证科创创业50ETF发起联接A",
+        "code": "013315",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 85,
+        "aumScore": 84,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "嘉实中证科创创业50ETF发起联接C",
+        "code": "013316",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 86,
+        "aumScore": 85,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华宝中证科创创业50ETF联接A",
+        "code": "013317",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 87,
+        "aumScore": 86,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华宝中证科创创业50ETF联接C",
+        "code": "013318",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 88,
+        "aumScore": 87,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发科创50ETF发起式联接A",
+        "code": "013810",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 89,
+        "aumScore": 88,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发科创50ETF发起式联接C",
+        "code": "013811",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 90,
+        "aumScore": 89,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      }
+    ],
+    "scores": {
+      "indexQuality": 78,
+      "longTermThesis": 86,
+      "valuationComfort": 50,
+      "crowding": 76,
+      "policySupport": 74,
+      "macroSensitivity": 86,
+      "volatilityRisk": 89,
+      "executionQuality": 80,
+      "costEfficiency": 82,
+      "portfolioFit": 58
+    },
+    "thesis": {
+      "bull": [
+        "科创板代表硬科技方向，长期政策支持较强。"
+      ],
+      "bear": [
+        "成分集中、波动高，和半导体/AI 持仓容易重叠。"
+      ],
+      "triggers": [
+        "若硬科技估值回落，可恢复观察仓。",
+        "若主题拥挤升温，应降低新增。"
+      ]
+    },
+    "holdingsOverlap": [
+      {
+        "name": "半导体芯片",
+        "overlap": 64
+      },
+      {
+        "name": "人工智能",
+        "overlap": 53
+      },
+      {
+        "name": "沪深300",
+        "overlap": 28
+      }
+    ]
+  },
+  {
+    "id": "nasdaq100",
+    "name": "纳斯达克100指数基金",
+    "category": "海外指数",
+    "role": "核心/卫星仓",
+    "riskLevel": "中高",
+    "matchedFundCount": 72,
+    "funds": [
+      {
+        "name": "广发纳斯达克100ETF联接美元(QDII)A",
+        "code": "000055",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 78,
+        "aumScore": 76,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "大成纳斯达克100ETF联接(QDII)A",
+        "code": "000834",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 79,
+        "aumScore": 77,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达纳斯达克100ETF联接(QDII-LOF)A(美元现汇)",
+        "code": "003722",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 80,
+        "aumScore": 78,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发纳斯达克100ETF联接人民币(QDII)C",
+        "code": "006479",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 81,
+        "aumScore": 79,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发纳斯达克100ETF联接美元(QDII)C",
+        "code": "006480",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 82,
+        "aumScore": 80,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "大成纳斯达克100ETF联接(QDII)C",
+        "code": "008971",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 83,
+        "aumScore": 81,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "建信纳斯达克100指数(QDII)A美元现汇",
+        "code": "012751",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 61,
+        "aumScore": 68,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "建信纳斯达克100指数(QDII)C人民币",
+        "code": "012752",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 62,
+        "aumScore": 69,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "建信纳斯达克100指数(QDII)C美元现汇",
+        "code": "012753",
+        "fee": 0.65,
+        "trackingError": 0.33,
+        "liquidity": 63,
+        "aumScore": 70,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达纳斯达克100ETF联接(QDII-LOF)C(人民币)",
+        "code": "012870",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 87,
+        "aumScore": 85,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达纳斯达克100ETF联接(QDII-LOF)C(美元现汇)",
+        "code": "012871",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 88,
+        "aumScore": 86,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华安纳斯达克100ETF联接(QDII)C",
+        "code": "014978",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 89,
+        "aumScore": 87,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏纳斯达克100ETF发起式联接(QDII)A",
+        "code": "015299",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 90,
+        "aumScore": 88,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏纳斯达克100ETF发起式联接(QDII)C",
+        "code": "015300",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 91,
+        "aumScore": 89,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏纳斯达克100ETF发起式联接(QDII)A美元现汇",
+        "code": "015518",
+        "fee": 0.5,
+        "trackingError": 0.24,
+        "liquidity": 92,
+        "aumScore": 90,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "博时纳斯达克100ETF发起式联接(QDII)A人民币",
+        "code": "016055",
+        "fee": 0.5,
+        "trackingError": 0.25,
+        "liquidity": 93,
+        "aumScore": 91,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "博时纳斯达克100ETF发起式联接(QDII)A美元现汇",
+        "code": "016056",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 94,
+        "aumScore": 76,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "博时纳斯达克100ETF发起式联接(QDII)C人民币",
+        "code": "016057",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 78,
+        "aumScore": 77,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "博时纳斯达克100ETF发起式联接(QDII)C美元现汇",
+        "code": "016058",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 79,
+        "aumScore": 78,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方纳斯达克100指数发起(QDII)A",
+        "code": "016452",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 58,
+        "aumScore": 63,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方纳斯达克100指数发起(QDII)C",
+        "code": "016453",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 59,
+        "aumScore": 64,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "嘉实纳斯达克100ETF发起联接(QDII)A人民币",
+        "code": "016532",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 82,
+        "aumScore": 81,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "嘉实纳斯达克100ETF发起联接(QDII)C人民币",
+        "code": "016533",
+        "fee": 0.5,
+        "trackingError": 0.24,
+        "liquidity": 83,
+        "aumScore": 82,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "嘉实纳斯达克100ETF发起联接(QDII)A美元现汇",
+        "code": "016534",
+        "fee": 0.5,
+        "trackingError": 0.25,
+        "liquidity": 84,
+        "aumScore": 83,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "嘉实纳斯达克100ETF发起联接(QDII)C美元现汇",
+        "code": "016535",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 85,
+        "aumScore": 84,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘纳斯达克100指数发起(QDII)A",
+        "code": "018043",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 64,
+        "aumScore": 69,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘纳斯达克100指数发起(QDII)C",
+        "code": "018044",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 65,
+        "aumScore": 70,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "汇添富纳斯达克100ETF发起式联接(QDII)人民币A",
+        "code": "018966",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 88,
+        "aumScore": 87,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "汇添富纳斯达克100ETF发起式联接(QDII)人民币C",
+        "code": "018967",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 89,
+        "aumScore": 88,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "汇添富纳斯达克100ETF发起式联接(QDII)美元现汇",
+        "code": "018968",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 90,
+        "aumScore": 89,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      }
+    ],
+    "scores": {
+      "indexQuality": 88,
+      "longTermThesis": 90,
+      "valuationComfort": 50,
+      "crowding": 78,
+      "policySupport": 48,
+      "macroSensitivity": 86,
+      "volatilityRisk": 78,
+      "executionQuality": 82,
+      "costEfficiency": 80,
+      "portfolioFit": 70
+    },
+    "thesis": {
+      "bull": [
+        "全球科技龙头长期盈利能力强，适合全球资产配置。"
+      ],
+      "bear": [
+        "估值、汇率和海外利率对短期表现影响大。"
+      ],
+      "triggers": [
+        "若美元利率下行且估值回落，可提高配置。",
+        "若美股拥挤度过高，应放慢买入。"
+      ]
+    },
+    "holdingsOverlap": [
+      {
+        "name": "沪深300",
+        "overlap": 31
+      },
+      {
+        "name": "红利低波",
+        "overlap": 31
+      },
+      {
+        "name": "半导体芯片",
+        "overlap": 18
+      }
+    ]
+  },
+  {
+    "id": "hangseng",
+    "name": "恒生指数基金",
+    "category": "港股指数",
+    "role": "卫星仓",
+    "riskLevel": "中高",
+    "matchedFundCount": 609,
+    "funds": [
+      {
+        "name": "华夏恒生ETF联接A",
+        "code": "000071",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 78,
+        "aumScore": 76,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏恒生ETF联接现汇",
+        "code": "000075",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 79,
+        "aumScore": 77,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏恒生ETF联接现钞",
+        "code": "000076",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 80,
+        "aumScore": 78,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏沪港通恒生ETF联接A",
+        "code": "000948",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 81,
+        "aumScore": 79,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "汇丰晋信恒生龙头指数C",
+        "code": "001149",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 59,
+        "aumScore": 66,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "民生加银港股通高股息A",
+        "code": "004532",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 60,
+        "aumScore": 67,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "民生加银港股通高股息C",
+        "code": "004533",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 61,
+        "aumScore": 68,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发恒生中型股指数C",
+        "code": "004996",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 62,
+        "aumScore": 69,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "摩根标普港股通低波红利指数A",
+        "code": "005051",
+        "fee": 0.65,
+        "trackingError": 0.33,
+        "liquidity": 63,
+        "aumScore": 70,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "摩根标普港股通低波红利指数C",
+        "code": "005052",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 64,
+        "aumScore": 71,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方恒生国企ETF联接A",
+        "code": "005554",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 88,
+        "aumScore": 86,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方恒生国企ETF联接C",
+        "code": "005555",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 89,
+        "aumScore": 87,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方恒生指数ETF联接C",
+        "code": "005659",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 90,
+        "aumScore": 88,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达恒生国企ETF联接C",
+        "code": "005675",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 91,
+        "aumScore": 89,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏沪港通恒生ETF联接C",
+        "code": "005734",
+        "fee": 0.5,
+        "trackingError": 0.24,
+        "liquidity": 92,
+        "aumScore": 90,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华安CES港股通ETF联接A",
+        "code": "005813",
+        "fee": 0.5,
+        "trackingError": 0.25,
+        "liquidity": 93,
+        "aumScore": 91,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华安CES港股通ETF联接C",
+        "code": "005814",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 94,
+        "aumScore": 76,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华宝港股通标普香港上市中国中小盘指数(LOF)C",
+        "code": "006127",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 56,
+        "aumScore": 79,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华宝港股通恒生中国(香港上市)30ETF联接(LOF)C",
+        "code": "006355",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 79,
+        "aumScore": 78,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏恒生ETF联接C",
+        "code": "006381",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 80,
+        "aumScore": 79,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "嘉实港股通新经济指数C",
+        "code": "006614",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 59,
+        "aumScore": 64,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "泰康港股通大消费指数A",
+        "code": "006786",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 60,
+        "aumScore": 65,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "泰康港股通大消费指数C",
+        "code": "006787",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 61,
+        "aumScore": 66,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "汇添富恒生指数(QDII-LOF)C",
+        "code": "010789",
+        "fee": 0.65,
+        "trackingError": 0.33,
+        "liquidity": 62,
+        "aumScore": 67,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘恒生科技ETF联接A",
+        "code": "012348",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 85,
+        "aumScore": 84,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘恒生科技ETF联接C",
+        "code": "012349",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 86,
+        "aumScore": 85,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "建信恒生科技指数发起(QDII)A",
+        "code": "012570",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 65,
+        "aumScore": 70,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "建信恒生科技指数发起(QDII)C",
+        "code": "012571",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 66,
+        "aumScore": 71,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发恒生科技ETF联接(QDII)A",
+        "code": "012804",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 89,
+        "aumScore": 88,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发恒生科技ETF联接(QDII)C",
+        "code": "012805",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 90,
+        "aumScore": 89,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      }
+    ],
+    "scores": {
+      "indexQuality": 78,
+      "longTermThesis": 76,
+      "valuationComfort": 72,
+      "crowding": 52,
+      "policySupport": 62,
+      "macroSensitivity": 66,
+      "volatilityRisk": 72,
+      "executionQuality": 78,
+      "costEfficiency": 82,
+      "portfolioFit": 68
+    },
+    "thesis": {
+      "bull": [
+        "港股估值弹性较大，适合做区域分散配置。"
+      ],
+      "bear": [
+        "港股受海外流动性、汇率和互联网监管预期影响较大。"
+      ],
+      "triggers": [
+        "若南向资金和盈利预期改善，可恢复分批。",
+        "若外部流动性紧张，应降低仓位。"
+      ]
+    },
+    "holdingsOverlap": [
+      {
+        "name": "沪深300",
+        "overlap": 30
+      },
+      {
+        "name": "红利低波",
+        "overlap": 30
+      },
+      {
+        "name": "半导体芯片",
+        "overlap": 18
+      }
+    ]
+  },
+  {
+    "id": "medicine",
+    "name": "医药指数基金",
+    "category": "行业指数",
+    "role": "卫星/防守仓",
+    "riskLevel": "中高",
+    "matchedFundCount": 311,
+    "funds": [
+      {
+        "name": "国联安中证医药100A",
+        "code": "000059",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 55,
+        "aumScore": 62,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发全球医疗保健指数人民币(QDII)A",
+        "code": "000369",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 56,
+        "aumScore": 63,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发全球医疗保健美元现汇(QDII)A",
+        "code": "000370",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 57,
+        "aumScore": 64,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华安中证细分医药ETF联接A",
+        "code": "000373",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 81,
+        "aumScore": 79,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华安中证细分医药ETF联接C",
+        "code": "000376",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 82,
+        "aumScore": 80,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发生物科技指数人民币(QDII)A",
+        "code": "001092",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 60,
+        "aumScore": 67,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发生物科技指数美元(QDII)A",
+        "code": "001093",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 61,
+        "aumScore": 68,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发医药卫生联接A",
+        "code": "001180",
+        "fee": 0.6,
+        "trackingError": 0.25,
+        "liquidity": 72,
+        "aumScore": 69,
+        "fit": "场外联接",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达医药ETF联接A",
+        "code": "001344",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 86,
+        "aumScore": 84,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证医药100A",
+        "code": "001550",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 64,
+        "aumScore": 71,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证医药100C",
+        "code": "001551",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 65,
+        "aumScore": 72,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发医药卫生联接C",
+        "code": "002978",
+        "fee": 0.6,
+        "trackingError": 0.29,
+        "liquidity": 76,
+        "aumScore": 73,
+        "fit": "场外联接",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达标普医疗保健美元汇A",
+        "code": "003719",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 67,
+        "aumScore": 74,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达标普生物科技美元汇A",
+        "code": "003720",
+        "fee": 0.65,
+        "trackingError": 0.33,
+        "liquidity": 68,
+        "aumScore": 75,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "银华中证全指医药卫生",
+        "code": "005112",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 69,
+        "aumScore": 76,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "富国中证医药主题指数增强C",
+        "code": "005626",
+        "fee": 0.8,
+        "trackingError": 0.28,
+        "liquidity": 70,
+        "aumScore": 77,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "国联安中证医药100C",
+        "code": "006569",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 55,
+        "aumScore": 78,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "国泰中证生物医药ETF联接A",
+        "code": "006756",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 78,
+        "aumScore": 77,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "国泰中证生物医药ETF联接C",
+        "code": "006757",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 79,
+        "aumScore": 78,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "汇添富中证医药ETF联接A",
+        "code": "007076",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 80,
+        "aumScore": 79,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "汇添富中证医药ETF联接C",
+        "code": "007077",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 81,
+        "aumScore": 80,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达医药ETF联接C",
+        "code": "007883",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 82,
+        "aumScore": 81,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "嘉实中证医药健康100策略ETF联接A",
+        "code": "008154",
+        "fee": 0.5,
+        "trackingError": 0.24,
+        "liquidity": 83,
+        "aumScore": 82,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "嘉实中证医药健康100策略ETF联接C",
+        "code": "008155",
+        "fee": 0.5,
+        "trackingError": 0.25,
+        "liquidity": 84,
+        "aumScore": 83,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "东财医药A",
+        "code": "008551",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 63,
+        "aumScore": 68,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "东财医药C",
+        "code": "008552",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 64,
+        "aumScore": 69,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发中证医疗ETF联接C",
+        "code": "009881",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 87,
+        "aumScore": 86,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "国泰国证医药卫生行业指数C",
+        "code": "010144",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 66,
+        "aumScore": 71,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "鹏华中证医药指数(LOF)C",
+        "code": "010366",
+        "fee": 0.65,
+        "trackingError": 0.33,
+        "liquidity": 67,
+        "aumScore": 72,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达中证万得生物科技指数(LOF)C",
+        "code": "010572",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 68,
+        "aumScore": 73,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      }
+    ],
+    "scores": {
+      "indexQuality": 82,
+      "longTermThesis": 84,
+      "valuationComfort": 60,
+      "crowding": 58,
+      "policySupport": 70,
+      "macroSensitivity": 62,
+      "volatilityRisk": 72,
+      "executionQuality": 82,
+      "costEfficiency": 84,
+      "portfolioFit": 66
+    },
+    "thesis": {
+      "bull": [
+        "人口结构、创新药和医疗需求支撑长期逻辑。"
+      ],
+      "bear": [
+        "集采、政策和研发失败会带来阶段性冲击。"
+      ],
+      "triggers": [
+        "若政策边际缓和且估值低位，可恢复配置。",
+        "若政策风险升温，应观察。"
+      ]
+    },
+    "holdingsOverlap": [
+      {
+        "name": "沪深300",
+        "overlap": 30
+      },
+      {
+        "name": "红利低波",
+        "overlap": 30
+      },
+      {
+        "name": "半导体芯片",
+        "overlap": 18
+      }
+    ]
+  },
+  {
+    "id": "consumption",
+    "name": "消费指数基金",
+    "category": "行业指数",
+    "role": "核心/卫星仓",
+    "riskLevel": "中",
+    "matchedFundCount": 165,
+    "funds": [
+      {
+        "name": "汇添富中证主要消费ETF联接A",
+        "code": "000248",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 78,
+        "aumScore": 76,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达标普消费品指数美元现汇A",
+        "code": "000593",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 56,
+        "aumScore": 63,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发中证全指可选消费联接A",
+        "code": "001133",
+        "fee": 0.6,
+        "trackingError": 0.26,
+        "liquidity": 67,
+        "aumScore": 64,
+        "fit": "场外联接",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证食品饮料ETF联接A",
+        "code": "001631",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 81,
+        "aumScore": 79,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证食品饮料ETF联接C",
+        "code": "001632",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 82,
+        "aumScore": 80,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华宝标普美国消费美元",
+        "code": "002423",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 60,
+        "aumScore": 67,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发中证全指可选消费联接C",
+        "code": "002977",
+        "fee": 0.6,
+        "trackingError": 0.24,
+        "liquidity": 71,
+        "aumScore": 68,
+        "fit": "场外联接",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "招商上证消费80ETF联接C",
+        "code": "004407",
+        "fee": 0.5,
+        "trackingError": 0.25,
+        "liquidity": 85,
+        "aumScore": 83,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达标普消费品指数C",
+        "code": "005676",
+        "fee": 0.65,
+        "trackingError": 0.33,
+        "liquidity": 63,
+        "aumScore": 70,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "前海开源MSCI中国A股消费A",
+        "code": "006712",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 64,
+        "aumScore": 71,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "前海开源MSCI中国A股消费C",
+        "code": "006713",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 65,
+        "aumScore": 72,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "泰康港股通大消费指数A",
+        "code": "006786",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 66,
+        "aumScore": 73,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "泰康港股通大消费指数C",
+        "code": "006787",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 67,
+        "aumScore": 74,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "中金中证沪港深优选消费50指数A",
+        "code": "008519",
+        "fee": 0.65,
+        "trackingError": 0.33,
+        "liquidity": 68,
+        "aumScore": 75,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "中金中证沪港深优选消费50指数C",
+        "code": "008520",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 69,
+        "aumScore": 76,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "宏利消费红利指数A",
+        "code": "008928",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 70,
+        "aumScore": 77,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "宏利消费红利指数C",
+        "code": "008929",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 55,
+        "aumScore": 78,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "富国中证消费50ETF联接A",
+        "code": "008975",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 78,
+        "aumScore": 77,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "富国中证消费50ETF联接C",
+        "code": "008976",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 79,
+        "aumScore": 78,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "东兴中证消费50A",
+        "code": "009116",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 58,
+        "aumScore": 63,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "东兴中证消费50C",
+        "code": "009117",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 59,
+        "aumScore": 64,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "嘉实中证主要消费ETF发起联接A",
+        "code": "009179",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 82,
+        "aumScore": 81,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "嘉实中证主要消费ETF发起联接C",
+        "code": "009180",
+        "fee": 0.5,
+        "trackingError": 0.24,
+        "liquidity": 83,
+        "aumScore": 82,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华宝中证消费龙头ETF联接C",
+        "code": "009329",
+        "fee": 0.5,
+        "trackingError": 0.25,
+        "liquidity": 84,
+        "aumScore": 83,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华宝标普美国消费人民币C",
+        "code": "009975",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 63,
+        "aumScore": 68,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘国证消费100指数增强发起A",
+        "code": "010771",
+        "fee": 0.8,
+        "trackingError": 0.28,
+        "liquidity": 64,
+        "aumScore": 69,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘国证消费100指数增强发起C",
+        "code": "010772",
+        "fee": 0.8,
+        "trackingError": 0.3,
+        "liquidity": 65,
+        "aumScore": 70,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "招商中证消费龙头指数增强A",
+        "code": "011853",
+        "fee": 0.8,
+        "trackingError": 0.31,
+        "liquidity": 66,
+        "aumScore": 71,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "招商中证消费龙头指数增强C",
+        "code": "011854",
+        "fee": 0.8,
+        "trackingError": 0.33,
+        "liquidity": 67,
+        "aumScore": 72,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "鹏华酒C",
+        "code": "012043",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 68,
+        "aumScore": 73,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      }
+    ],
+    "scores": {
+      "indexQuality": 84,
+      "longTermThesis": 82,
+      "valuationComfort": 60,
+      "crowding": 56,
+      "policySupport": 52,
+      "macroSensitivity": 55,
+      "volatilityRisk": 62,
+      "executionQuality": 82,
+      "costEfficiency": 84,
+      "portfolioFit": 72
+    },
+    "thesis": {
+      "bull": [
+        "消费龙头具备品牌、渠道和现金流优势。"
+      ],
+      "bear": [
+        "估值修复依赖收入预期和消费信心。"
+      ],
+      "triggers": [
+        "若消费数据改善，可分批。",
+        "若估值提前反弹但基本面未修复，应等待。"
+      ]
+    },
+    "holdingsOverlap": [
+      {
+        "name": "沪深300",
+        "overlap": 33
+      },
+      {
+        "name": "红利低波",
+        "overlap": 33
+      },
+      {
+        "name": "半导体芯片",
+        "overlap": 18
+      }
+    ]
+  },
+  {
+    "id": "new_energy",
+    "name": "新能源指数基金",
+    "category": "行业指数",
+    "role": "卫星仓",
+    "riskLevel": "高",
+    "matchedFundCount": 238,
+    "funds": [
+      {
+        "name": "国泰中证新能源汽车ETF联接A",
+        "code": "009067",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 78,
+        "aumScore": 76,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "国泰中证新能源汽车ETF联接C",
+        "code": "009068",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 79,
+        "aumScore": 77,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "东财新能源车A",
+        "code": "010805",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 57,
+        "aumScore": 64,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "东财新能源车C",
+        "code": "010806",
+        "fee": 0.65,
+        "trackingError": 0.33,
+        "liquidity": 58,
+        "aumScore": 65,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证光伏产业指数A",
+        "code": "011102",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 59,
+        "aumScore": 66,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证光伏产业指数C",
+        "code": "011103",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 60,
+        "aumScore": 67,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证新能源车A",
+        "code": "011512",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 61,
+        "aumScore": 68,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证新能源车C",
+        "code": "011513",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 62,
+        "aumScore": 69,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "招商中证光伏产业ETF联接A",
+        "code": "011966",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 86,
+        "aumScore": 84,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "招商中证光伏产业ETF联接C",
+        "code": "011967",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 87,
+        "aumScore": 85,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证新能源指数增强A",
+        "code": "012328",
+        "fee": 0.8,
+        "trackingError": 0.28,
+        "liquidity": 65,
+        "aumScore": 72,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证新能源指数增强C",
+        "code": "012329",
+        "fee": 0.8,
+        "trackingError": 0.3,
+        "liquidity": 66,
+        "aumScore": 73,
+        "fit": "指数增强",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发中证光伏产业指数A",
+        "code": "012364",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 67,
+        "aumScore": 74,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "广发中证光伏产业指数C",
+        "code": "012365",
+        "fee": 0.65,
+        "trackingError": 0.33,
+        "liquidity": 68,
+        "aumScore": 75,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "嘉实中证新能源汽车指数A",
+        "code": "012543",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 69,
+        "aumScore": 76,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "嘉实中证新能源汽车指数C",
+        "code": "012544",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 70,
+        "aumScore": 77,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华泰柏瑞光伏ETF联接A",
+        "code": "012679",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 94,
+        "aumScore": 76,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华泰柏瑞光伏ETF联接C",
+        "code": "012680",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 78,
+        "aumScore": 77,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "平安中证光伏产业指数A",
+        "code": "012722",
+        "fee": 0.65,
+        "trackingError": 0.33,
+        "liquidity": 57,
+        "aumScore": 62,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "平安中证光伏产业指数C",
+        "code": "012723",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 58,
+        "aumScore": 63,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方中证新能源ETF联接A",
+        "code": "012831",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 81,
+        "aumScore": 80,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方中证新能源ETF联接C",
+        "code": "012832",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 82,
+        "aumScore": 81,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "汇添富中证电池主题ETF发起式联接A",
+        "code": "012862",
+        "fee": 0.5,
+        "trackingError": 0.24,
+        "liquidity": 83,
+        "aumScore": 82,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "汇添富中证电池主题ETF发起式联接C",
+        "code": "012863",
+        "fee": 0.5,
+        "trackingError": 0.25,
+        "liquidity": 84,
+        "aumScore": 83,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏中证光伏产业ETF发起式联接A",
+        "code": "012885",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 85,
+        "aumScore": 84,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏中证光伏产业ETF发起式联接C",
+        "code": "012886",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 86,
+        "aumScore": 85,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "银华中证光伏ETF发起式联接A",
+        "code": "012928",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 87,
+        "aumScore": 86,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "银华中证光伏ETF发起式联接C",
+        "code": "012929",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 88,
+        "aumScore": 87,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏中证新能源汽车ETF发起式联接A",
+        "code": "013013",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 89,
+        "aumScore": 88,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏中证新能源汽车ETF发起式联接C",
+        "code": "013014",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 90,
+        "aumScore": 89,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      }
+    ],
+    "scores": {
+      "indexQuality": 76,
+      "longTermThesis": 82,
+      "valuationComfort": 58,
+      "crowding": 70,
+      "policySupport": 72,
+      "macroSensitivity": 80,
+      "volatilityRisk": 88,
+      "executionQuality": 78,
+      "costEfficiency": 82,
+      "portfolioFit": 56
+    },
+    "thesis": {
+      "bull": [
+        "能源转型仍是长期趋势，产业链具备全球竞争力。"
+      ],
+      "bear": [
+        "产能周期和价格战会压制盈利，波动极大。"
+      ],
+      "triggers": [
+        "若价格战缓和且库存改善，可恢复分批。",
+        "若产能继续过剩，应等待。"
+      ]
+    },
+    "holdingsOverlap": [
+      {
+        "name": "半导体芯片",
+        "overlap": 68
+      },
+      {
+        "name": "人工智能",
+        "overlap": 57
+      },
+      {
+        "name": "沪深300",
+        "overlap": 32
+      }
+    ]
+  },
+  {
+    "id": "securities",
+    "name": "证券指数基金",
+    "category": "行业指数",
+    "role": "战术仓",
+    "riskLevel": "高",
+    "matchedFundCount": 102,
+    "funds": [
+      {
+        "name": "易方达证券保险ETF联接A",
+        "code": "000950",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 78,
+        "aumScore": 76,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证证券保险A",
+        "code": "001552",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 56,
+        "aumScore": 63,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证证券保险C",
+        "code": "001553",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 57,
+        "aumScore": 64,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方中证全指证券公司ETF联接A",
+        "code": "004069",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 81,
+        "aumScore": 79,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方中证全指证券公司ETF联接C",
+        "code": "004070",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 82,
+        "aumScore": 80,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华宝券商ETF联接A",
+        "code": "006098",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 83,
+        "aumScore": 81,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华宝券商ETF联接C",
+        "code": "007531",
+        "fee": 0.5,
+        "trackingError": 0.24,
+        "liquidity": 84,
+        "aumScore": 82,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达证券保险ETF联接C",
+        "code": "007882",
+        "fee": 0.5,
+        "trackingError": 0.25,
+        "liquidity": 85,
+        "aumScore": 83,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏中证全指证券公司ETF联接A",
+        "code": "007992",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 86,
+        "aumScore": 84,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏中证全指证券公司ETF联接C",
+        "code": "007993",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 87,
+        "aumScore": 85,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "中银证券中证500ETF联接A",
+        "code": "008258",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 88,
+        "aumScore": 86,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "中银证券中证500ETF联接C",
+        "code": "008259",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 89,
+        "aumScore": 87,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证全指证券公司ETF联接A",
+        "code": "008590",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 90,
+        "aumScore": 88,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证全指证券公司ETF联接C",
+        "code": "008591",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 91,
+        "aumScore": 89,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "鹏华中证全指证券公司指数(LOF)C",
+        "code": "012044",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 69,
+        "aumScore": 76,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "国泰中证全指证券公司ETF联接A",
+        "code": "012362",
+        "fee": 0.5,
+        "trackingError": 0.25,
+        "liquidity": 93,
+        "aumScore": 91,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "国泰中证全指证券公司ETF联接C",
+        "code": "012363",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 94,
+        "aumScore": 76,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达中证全指证券公司ETF联接A",
+        "code": "012590",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 78,
+        "aumScore": 77,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "东财证券保险A",
+        "code": "012605",
+        "fee": 0.65,
+        "trackingError": 0.33,
+        "liquidity": 57,
+        "aumScore": 62,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "东财证券保险C",
+        "code": "012606",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 58,
+        "aumScore": 63,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达中证全指证券公司ETF联接C",
+        "code": "012700",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 81,
+        "aumScore": 80,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达中证全指证券公司指数(LOF)C",
+        "code": "012874",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 60,
+        "aumScore": 65,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "富国中证全指证券公司指数(LOF)C",
+        "code": "013276",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 61,
+        "aumScore": 66,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "招商中证全指证券公司指数(LOF)C",
+        "code": "013597",
+        "fee": 0.65,
+        "trackingError": 0.33,
+        "liquidity": 62,
+        "aumScore": 67,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华安中证全指证券公司ETF联接C",
+        "code": "014984",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 85,
+        "aumScore": 84,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "申万菱信中证申万证券行业指数(LOF)C",
+        "code": "015178",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 64,
+        "aumScore": 69,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "国泰中证申万证券行业指数(LOF)C",
+        "code": "015598",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 65,
+        "aumScore": 70,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "鹏华中证800证券保险指数(LOF)C",
+        "code": "015693",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 66,
+        "aumScore": 71,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "宝盈国证证券龙头指数发起A",
+        "code": "015859",
+        "fee": 0.65,
+        "trackingError": 0.33,
+        "liquidity": 67,
+        "aumScore": 72,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "宝盈国证证券龙头指数发起C",
+        "code": "015860",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 68,
+        "aumScore": 73,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      }
+    ],
+    "scores": {
+      "indexQuality": 70,
+      "longTermThesis": 72,
+      "valuationComfort": 62,
+      "crowding": 66,
+      "policySupport": 58,
+      "macroSensitivity": 78,
+      "volatilityRisk": 82,
+      "executionQuality": 78,
+      "costEfficiency": 84,
+      "portfolioFit": 54
+    },
+    "thesis": {
+      "bull": [
+        "券商对市场成交、风险偏好和资本市场改革高度敏感。"
+      ],
+      "bear": [
+        "强周期、强情绪属性，不适合长期大仓位持有。"
+      ],
+      "triggers": [
+        "若市场成交持续放大，可做战术配置。",
+        "若风险偏好回落，应快速降温。"
+      ]
+    },
+    "holdingsOverlap": [
+      {
+        "name": "沪深300",
+        "overlap": 32
+      },
+      {
+        "name": "红利低波",
+        "overlap": 32
+      },
+      {
+        "name": "半导体芯片",
+        "overlap": 18
+      }
+    ]
+  },
+  {
+    "id": "bank",
+    "name": "银行指数基金",
+    "category": "行业指数",
+    "role": "防守仓",
+    "riskLevel": "中",
+    "matchedFundCount": 61,
+    "funds": [
+      {
+        "name": "天弘中证银行ETF联接A",
+        "code": "001594",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 78,
+        "aumScore": 76,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "天弘中证银行ETF联接C",
+        "code": "001595",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 79,
+        "aumScore": 77,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "国联银行间1-3年中高等级信用债指数A",
+        "code": "003081",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 57,
+        "aumScore": 64,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "国联银行间1-3年中高等级信用债指数C",
+        "code": "003082",
+        "fee": 0.65,
+        "trackingError": 0.33,
+        "liquidity": 58,
+        "aumScore": 65,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方中证银行ETF发起联接A",
+        "code": "004597",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 82,
+        "aumScore": 80,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方中证银行ETF发起联接C",
+        "code": "004598",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 83,
+        "aumScore": 81,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华宝中证银行ETF联接C",
+        "code": "006697",
+        "fee": 0.5,
+        "trackingError": 0.24,
+        "liquidity": 84,
+        "aumScore": 82,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "泰康香港银行指数A",
+        "code": "006809",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 62,
+        "aumScore": 69,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "泰康香港银行指数C",
+        "code": "006810",
+        "fee": 0.65,
+        "trackingError": 0.33,
+        "liquidity": 63,
+        "aumScore": 70,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "汇添富中证银行ETF联接A",
+        "code": "007153",
+        "fee": 0.5,
+        "trackingError": 0.19,
+        "liquidity": 87,
+        "aumScore": 85,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "汇添富中证银行ETF联接C",
+        "code": "007154",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 88,
+        "aumScore": 86,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "兴业中证银行50金融债指数A",
+        "code": "008042",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 66,
+        "aumScore": 73,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "兴业中证银行50金融债指数C",
+        "code": "008043",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 67,
+        "aumScore": 74,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏中证银行ETF联接A",
+        "code": "008298",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 91,
+        "aumScore": 89,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华夏中证银行ETF联接C",
+        "code": "008299",
+        "fee": 0.5,
+        "trackingError": 0.24,
+        "liquidity": 92,
+        "aumScore": 90,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "易方达中证银行ETF联接(LOF)C",
+        "code": "009860",
+        "fee": 0.5,
+        "trackingError": 0.25,
+        "liquidity": 93,
+        "aumScore": 91,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "鹏华中证香港银行指数(LOF)C",
+        "code": "010365",
+        "fee": 0.65,
+        "trackingError": 0.3,
+        "liquidity": 55,
+        "aumScore": 78,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "中银彭博政策性银行债券1-5年",
+        "code": "010509",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 56,
+        "aumScore": 79,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "东财银行A",
+        "code": "011971",
+        "fee": 0.65,
+        "trackingError": 0.33,
+        "liquidity": 57,
+        "aumScore": 62,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "东财银行C",
+        "code": "011972",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 58,
+        "aumScore": 63,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "鹏华中证银行指数(LOF)C",
+        "code": "012042",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 59,
+        "aumScore": 64,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "南方中证银行ETF发起联接E",
+        "code": "012547",
+        "fee": 0.5,
+        "trackingError": 0.23,
+        "liquidity": 82,
+        "aumScore": 81,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "富国中证银行指数(LOF)C",
+        "code": "013330",
+        "fee": 0.65,
+        "trackingError": 0.31,
+        "liquidity": 61,
+        "aumScore": 66,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "招商中证银行指数C",
+        "code": "014028",
+        "fee": 0.65,
+        "trackingError": 0.33,
+        "liquidity": 62,
+        "aumScore": 67,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "华安中证银行ETF联接C",
+        "code": "014983",
+        "fee": 0.5,
+        "trackingError": 0.18,
+        "liquidity": 85,
+        "aumScore": 84,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "招商中证银行指数E",
+        "code": "016343",
+        "fee": 0.65,
+        "trackingError": 0.28,
+        "liquidity": 64,
+        "aumScore": 69,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "招商中证银行AH价格优选ETF发起式联接A",
+        "code": "016572",
+        "fee": 0.5,
+        "trackingError": 0.2,
+        "liquidity": 87,
+        "aumScore": 86,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "招商中证银行AH价格优选ETF发起式联接C",
+        "code": "016573",
+        "fee": 0.5,
+        "trackingError": 0.21,
+        "liquidity": 88,
+        "aumScore": 87,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "博时中证银行ETF联接C",
+        "code": "018591",
+        "fee": 0.5,
+        "trackingError": 0.22,
+        "liquidity": 89,
+        "aumScore": 88,
+        "fit": "场内 ETF",
+        "source": "eastmoney_fundcode_search"
+      },
+      {
+        "name": "招商CFETS银行间绿色债券指数A",
+        "code": "019565",
+        "fee": 0.65,
+        "trackingError": 0.34,
+        "liquidity": 68,
+        "aumScore": 73,
+        "fit": "指数产品",
+        "source": "eastmoney_fundcode_search"
+      }
+    ],
+    "scores": {
+      "indexQuality": 76,
+      "longTermThesis": 72,
+      "valuationComfort": 72,
+      "crowding": 42,
+      "policySupport": 54,
+      "macroSensitivity": 42,
+      "volatilityRisk": 46,
+      "executionQuality": 80,
+      "costEfficiency": 88,
+      "portfolioFit": 72
+    },
+    "thesis": {
+      "bull": [
+        "估值和股息率提供一定安全垫。"
+      ],
+      "bear": [
+        "净息差、地产链和信用风险会压制估值。"
+      ],
+      "triggers": [
+        "若信用风险下降且股息率有吸引力，可配置。",
+        "若经济下行压力加大，应谨慎。"
+      ]
+    },
+    "holdingsOverlap": [
+      {
+        "name": "沪深300",
+        "overlap": 26
+      },
+      {
+        "name": "红利低波",
+        "overlap": 26
+      },
+      {
+        "name": "半导体芯片",
+        "overlap": 18
+      }
+    ]
+  }
+]
