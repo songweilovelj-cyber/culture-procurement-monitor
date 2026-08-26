@@ -10,9 +10,20 @@
 - 数据更新服务
 - 产品研究文档
 
+## 线上体验
+
+GitHub Pages 体验版：
+
+```text
+https://songweilovelj-cyber.github.io/culture-procurement-monitor/
+```
+
+体验版使用仓库内静态数据运行，支持主题分析、Macro AI、持仓添加/删除/金额调整和浏览器本地保存。由于 GitHub Pages 不能运行 Node 服务，线上体验版的“立即更新数据”会提示用户下载源码后本地启动服务。
+
 ## 怎么用
 
 ```bash
+npm install
 npm start
 ```
 
@@ -93,5 +104,4 @@ GET /api/update-data/status
 - 接入真实数据源
 - 建立自动更新任务
 - 保存每次评分版本
-- 增加用户真实持仓录入
 - 增加半导体指数基金专项分析报告
