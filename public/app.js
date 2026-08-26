@@ -1,3 +1,5 @@
+import { buildDashboard } from "./static-engine.js";
+
 const state = {
   data: null,
   portfolio: null,
@@ -47,6 +49,14 @@ const el = {
   portfolioWeightTag: document.getElementById("portfolioWeightTag")
 };
 
+const staticMode = {
+  detected: false,
+  funds: null,
+  market: null,
+  samplePortfolio: null,
+  storageKey: "fund-investment-ai-agent.portfolio.v1"
+};
+
 function params() {
   return new URLSearchParams({
     horizon: el.horizon.value,
@@ -54,9 +64,73 @@ function params() {
   });
 }
 
+async function fetchJson(url, options) {
+  const response = await fetch(url, options);
+  const payload = await response.json();
+  if (!response.ok) {
+    throw new Error(payload.error?.message || payload.message || payload.error || `HTTP ${response.status}`);
+  }
+  return payload;
+}
+
+async function loadStaticBundle() {
+  if (staticMode.funds && staticMode.market && staticMode.samplePortfolio) return;
+  staticMode.detected = true;
+  const [funds, market, samplePortfolio] = await Promise.all([
+    fetchJson("./data/funds.json"),
+    fetchJson("./data/market.json"),
+    fetchJson("./data/portfolio.json")
+  ]);
+  staticMode.funds = funds;
+  staticMode.market = market;
+  staticMode.samplePortfolio = samplePortfolio;
+}
+
+function storedPortfolio() {
+  try {
+    const text = localStorage.getItem(staticMode.storageKey);
+    return text ? JSON.parse(text) : null;
+  } catch {
+    return null;
+  }
+}
+
+function activeStaticPortfolio() {
+  const userPortfolio = storedPortfolio();
+  if (userPortfolio) return { source: "user", portfolio: userPortfolio };
+  return { source: "sample", portfolio: staticMode.samplePortfolio };
+}
+
+async function buildStaticDashboard() {
+  await loadStaticBundle();
+  const { source, portfolio } = activeStaticPortfolio();
+  return {
+    ...buildDashboard(staticMode.funds, staticMode.market, portfolio, Object.fromEntries(params().entries())),
+    portfolioMeta: {
+      source,
+      holdingsCount: portfolio.holdings?.length || 0,
+      totalWeight: portfolio.holdings?.reduce((sum, holding) => sum + Number(holding.weight || 0), 0) || 0
+    }
+  };
+}
+
+async function loadStaticPortfolio() {
+  await loadStaticBundle();
+  const { source, portfolio } = activeStaticPortfolio();
+  return {
+    source,
+    portfolio,
+    holdingsCount: portfolio.holdings?.length || 0,
+    totalWeight: portfolio.holdings?.reduce((sum, holding) => sum + Number(holding.weight || 0), 0) || 0
+  };
+}
+
 async function loadDashboard() {
-  const response = await fetch(`/api/dashboard?${params().toString()}`);
-  state.data = await response.json();
+  try {
+    state.data = await fetchJson(`/api/dashboard?${params().toString()}`);
+  } catch (error) {
+    state.data = await buildStaticDashboard();
+  }
   if (!state.data.evaluations.some(item => item.id === state.selectedId)) {
     state.selectedId = state.data.evaluations[0]?.id;
   }
@@ -64,8 +138,11 @@ async function loadDashboard() {
 }
 
 async function loadPortfolio() {
-  const response = await fetch("/api/portfolio");
-  state.portfolio = await response.json();
+  try {
+    state.portfolio = await fetchJson("/api/portfolio");
+  } catch (error) {
+    state.portfolio = await loadStaticPortfolio();
+  }
   state.portfolioMeta = state.portfolio;
 }
 
@@ -379,6 +456,14 @@ function renderSources() {
       ${source.cadence} · ${source.freshness} · 当前状态：${source.status}${source.count ? ` · ${source.count} 条` : ""}
     </div>
   `).join("");
+  if (staticMode.detected) {
+    el.sourceList.innerHTML += `
+      <div>
+        <b>GitHub Pages 体验版</b><br />
+        静态托管 · 持仓保存在当前浏览器 · 数据更新需启动本地服务端
+      </div>
+    `;
+  }
 }
 
 function renderMacro() {
@@ -476,14 +561,43 @@ el.savePortfolioButton.addEventListener("click", async () => {
       riskTolerance: Number(el.risk.value),
       holdings
     };
-    const response = await fetch("/api/portfolio", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
-    });
-    const result = await response.json();
-    if (!response.ok) {
-      throw new Error(result.error || result.message || "保存失败");
+    let result;
+    if (staticMode.detected) {
+      const portfolio = {
+        ...payload,
+        updatedAt: new Date().toISOString(),
+        source: "user_import"
+      };
+      localStorage.setItem(staticMode.storageKey, JSON.stringify(portfolio));
+      result = {
+        status: "saved",
+        portfolio,
+        holdingsCount: holdings.length,
+        totalWeight: holdings.reduce((sum, holding) => sum + holding.weight, 0)
+      };
+    } else {
+      try {
+        result = await fetchJson("/api/portfolio", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+      } catch (error) {
+        staticMode.detected = true;
+        await loadStaticBundle();
+        const portfolio = {
+          ...payload,
+          updatedAt: new Date().toISOString(),
+          source: "user_import"
+        };
+        localStorage.setItem(staticMode.storageKey, JSON.stringify(portfolio));
+        result = {
+          status: "saved",
+          portfolio,
+          holdingsCount: holdings.length,
+          totalWeight: holdings.reduce((sum, holding) => sum + holding.weight, 0)
+        };
+      }
     }
     el.portfolioStatus.textContent = `保存成功：${result.holdingsCount} 条，${result.totalWeight.toFixed(1)}%。`;
     await loadPortfolio();
@@ -501,10 +615,15 @@ el.resetPortfolioButton.addEventListener("click", async () => {
   el.resetPortfolioButton.disabled = true;
   el.portfolioStatus.textContent = "恢复中：正在清除用户持仓并回到样例组合...";
   try {
-    const response = await fetch("/api/portfolio", { method: "DELETE" });
-    const result = await response.json();
-    if (!response.ok) {
-      throw new Error(result.error || result.message || "恢复失败");
+    if (staticMode.detected) {
+      localStorage.removeItem(staticMode.storageKey);
+    } else {
+      try {
+        await fetchJson("/api/portfolio", { method: "DELETE" });
+      } catch (error) {
+        staticMode.detected = true;
+        localStorage.removeItem(staticMode.storageKey);
+      }
     }
     el.portfolioStatus.textContent = "已恢复样例组合。";
     await loadPortfolio();
@@ -521,11 +640,10 @@ el.updateButton.addEventListener("click", async () => {
   el.updateButton.classList.add("loading");
   el.updateStatus.textContent = "更新中：正在抓取基金库并重建主题数据...";
   try {
-    const response = await fetch("/api/update-data", { method: "POST" });
-    const payload = await response.json();
-    if (!response.ok) {
-      throw new Error(payload.error?.message || payload.message || "数据更新失败");
+    if (staticMode.detected) {
+      throw new Error("GitHub Pages 体验版不能运行数据采集服务，请下载源码后本地启动 Node 服务更新数据。");
     }
+    const payload = await fetchJson("/api/update-data", { method: "POST" });
     const result = payload.result;
     el.updateStatus.textContent = `更新完成：指数基金 ${result.indexFundCount} 只，主题 ${result.themeCount} 个。`;
     await loadDashboard();
