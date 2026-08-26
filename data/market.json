@@ -1,0 +1,93 @@
+{
+  "asOf": "2026-08-26T07:40:37.629Z",
+  "macroRegimes": {
+    "neutral": {
+      "label": "中性",
+      "riskAppetite": 0,
+      "durationPressure": 0,
+      "cyclicalSupport": 0,
+      "dividendSupport": 0
+    },
+    "easing": {
+      "label": "宽松",
+      "riskAppetite": 9,
+      "durationPressure": -8,
+      "cyclicalSupport": 4,
+      "dividendSupport": -2
+    },
+    "tightening": {
+      "label": "紧缩",
+      "riskAppetite": -10,
+      "durationPressure": 10,
+      "cyclicalSupport": -7,
+      "dividendSupport": 7
+    },
+    "recovery": {
+      "label": "复苏",
+      "riskAppetite": 7,
+      "durationPressure": -2,
+      "cyclicalSupport": 9,
+      "dividendSupport": 1
+    },
+    "risk_off": {
+      "label": "避险",
+      "riskAppetite": -14,
+      "durationPressure": 3,
+      "cyclicalSupport": -10,
+      "dividendSupport": 9
+    }
+  },
+  "macroIndicators": {
+    "policyRateTrend": -0.2,
+    "pmi": 50.7,
+    "creditImpulse": 0.3,
+    "inflationTrend": -0.1,
+    "liquidityStress": 46,
+    "marketVolatility": 58,
+    "policyTone": 0.4,
+    "source": "mock_macro_features",
+    "note": "这些是 Macro AI 的输入特征。接入真实数据后由数据采集 skill 自动更新。"
+  },
+  "dataSources": [
+    {
+      "name": "基金净值与费率",
+      "cadence": "日频",
+      "freshness": "just_updated",
+      "status": "collected",
+      "fields": [
+        "nav",
+        "aum",
+        "fee",
+        "trackingError",
+        "discountPremium"
+      ],
+      "count": 6688,
+      "updatedAt": "2026-08-26T07:40:37.629Z"
+    },
+    {
+      "name": "指数成分与权重",
+      "cadence": "周频/月频",
+      "freshness": "T+7",
+      "status": "mock",
+      "fields": [
+        "constituents",
+        "top10Weight",
+        "sectorExposure",
+        "turnover"
+      ]
+    },
+    {
+      "name": "宏观与政策",
+      "cadence": "日频/事件驱动",
+      "freshness": "T+1",
+      "status": "macro_ai_mock_features",
+      "fields": [
+        "rates",
+        "inflation",
+        "pmi",
+        "creditImpulse",
+        "policyEvents"
+      ]
+    }
+  ]
+}
