@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>指数基金投资分析工作台</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 17l4-5 4 3 6-8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 19h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <h1>指数基金投资分析工作台</h1>
+          <p>长期价值、当前买点、持仓节奏和风险复查，一屏完成。</p>
+        </div>
+      </div>
+      <div class="toolbar">
+        <label>
+          <span>持有周期</span>
+          <input id="horizonRange" type="range" min="1" max="10" value="5" />
+          <strong id="horizonText">5 年</strong>
+        </label>
+        <label>
+          <span>风险承受</span>
+          <input id="riskRange" type="range" min="1" max="10" value="6" />
+          <strong id="riskText">中等</strong>
+        </label>
+      </div>
+      <div class="freshness" id="freshness">加载中</div>
+    </header>
+
+    <div class="tabs-bar" role="tablist" aria-label="工作台页面切换">
+      <button class="tab-btn active" type="button" data-tab="overview" role="tab" aria-selected="true">总览</button>
+      <button class="tab-btn" type="button" data-tab="portfolio" role="tab" aria-selected="false">我的持仓</button>
+      <button class="tab-btn" type="button" data-tab="detail" role="tab" aria-selected="false">基金明细</button>
+    </div>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <section class="panel">
+          <div class="panel-head">
+            <h2>怎么用</h2>
+            <p>这是分析流程，不是行情页面。</p>
+          </div>
+          <div class="steps">
+            <div><b>1</b><span>先选基金主题</span></div>
+            <div><b>2</b><span>看总览页的行动建议和新增仓位</span></div>
+            <div><b>3</b><span>切到持仓页导入真实组合</span></div>
+            <div><b>4</b><span>去明细页看重叠与同类基金</span></div>
+          </div>
+        </section>
+
+        <section class="panel grow">
+          <div class="panel-head">
+            <h2>分析对象</h2>
+            <p>主题仓和核心仓分开看。</p>
+          </div>
+          <input class="search" id="searchInput" placeholder="搜索：半导体 / AI / 红利 / 沪深300" />
+          <div class="theme-list" id="themeList"></div>
+        </section>
+      </aside>
+
+      <section class="content">
+        <section class="view active" data-view="overview" role="tabpanel">
+          <section class="decision panel">
+            <div>
+              <div class="eyebrow" id="selectedCategory">主题指数</div>
+              <h2 id="selectedName">加载中</h2>
+              <p id="selectedRole">-</p>
+            </div>
+            <div class="decision-result">
+              <span>当前动作</span>
+              <strong id="actionText">-</strong>
+              <p id="positionText">-</p>
+            </div>
+          </section>
+
+          <section class="score-grid" id="scoreGrid"></section>
+
+          <section class="panel">
+            <div class="panel-head row">
+              <div>
+                <h2>为什么这样判</h2>
+                <p>结论由评分引擎生成，页面不硬编码建议。</p>
+              </div>
+              <span class="tag" id="reviewCadence">-</span>
+            </div>
+            <div class="rationale" id="rationale"></div>
+          </section>
+
+          <div class="overview-grid">
+            <section class="panel">
+              <div class="panel-head">
+                <h2>Macro AI</h2>
+                <p>宏观环境由模型自动判断，不要求用户手选。</p>
+              </div>
+              <div class="macro-box" id="macroBox"></div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-head">
+                <h2>风险提示</h2>
+                <p>不为了让用户买而隐藏风险。</p>
+              </div>
+              <div id="warningList" class="note-list"></div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-head">
+                <h2>复查触发器</h2>
+                <p>长期投资不等于不复查。</p>
+              </div>
+              <div id="triggerList" class="note-list"></div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-head">
+                <h2>数据更新</h2>
+                <p>手动刷新基金库，更新后模型会重新计算。</p>
+              </div>
+              <div class="update-box">
+                <button id="updateButton" class="primary-button" type="button">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M20 6v5h-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 18v-5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M18.5 9A7 7 0 0 0 6.8 5.8L4 8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5.5 15A7 7 0 0 0 17.2 18.2L20 15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  立即更新数据
+                </button>
+                <div id="updateStatus" class="update-status">待更新：点击后抓取最新基金列表并刷新模型。</div>
+              </div>
+              <div id="sourceList" class="source-list"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="view" data-view="portfolio" role="tabpanel" hidden>
+          <section class="panel">
+            <div class="panel-head row">
+              <div>
+                <h2>我的持仓</h2>
+                <p>导入或粘贴真实持仓，保存后会参与后续评分。</p>
+              </div>
+              <span class="tag" id="portfolioSourceTag">样例组合</span>
+            </div>
+            <div class="portfolio-grid portfolio-grid-ledger">
+              <div class="portfolio-summary" id="portfolioSummary"></div>
+              <div class="portfolio-editor">
+                <div class="ledger-head">
+                  <div>
+                    <h3>持仓账本</h3>
+                    <p>直接添加、删除或修改金额，仓位会自动计算。</p>
+                  </div>
+                  <button id="addHoldingButton" class="ghost-button" type="button">添加持仓</button>
+                </div>
+                <div class="holding-editor" id="holdingEditorRows"></div>
+                <div class="portfolio-actions">
+                  <button id="savePortfolioButton" class="primary-button" type="button">保存持仓</button>
+                  <button id="resetPortfolioButton" class="ghost-button" type="button">恢复样例组合</button>
+                </div>
+                <div id="portfolioStatus" class="update-status">修改金额后点击保存，模型会重新计算。</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head row">
+              <div>
+                <h2>持仓明细</h2>
+                <p>导入后这里保存你的真实组合。</p>
+              </div>
+              <span class="tag" id="portfolioWeightTag">-</span>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>名称</th>
+                    <th>主题</th>
+                    <th>金额/市值</th>
+                    <th>仓位</th>
+                  </tr>
+                </thead>
+                <tbody id="portfolioRows"></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+
+        <section class="view" data-view="detail" role="tabpanel" hidden>
+          <section class="panel">
+            <div class="panel-head row">
+              <div>
+                <h2>同类基金比较</h2>
+                <p>优先看费率、跟踪误差、流动性和产品分。</p>
+              </div>
+              <span class="tag" id="fundCountTag">-</span>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>基金</th>
+                    <th>代码</th>
+                    <th>费率</th>
+                    <th>跟踪误差</th>
+                    <th>产品分</th>
+                    <th>定位</th>
+                  </tr>
+                </thead>
+                <tbody id="fundRows"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="panel overlap-panel">
+            <div class="panel-head row">
+              <div>
+                <h2>持仓重叠风险</h2>
+                <p>判断继续买入该主题，会不会让组合集中到同一类风险暴露。</p>
+              </div>
+              <span class="tag" id="overlapRiskTag">-</span>
+            </div>
+            <div class="overlap-content">
+              <div class="overlap-summary" id="overlapSummary"></div>
+              <div id="overlapList" class="bars"></div>
+            </div>
+          </section>
+        </section>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
